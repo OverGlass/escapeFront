@@ -44,7 +44,6 @@ tags
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff:
-.idea/workspace.xml
 .idea/tasks.xml
 
 # Sensitive or high-churn files:
@@ -169,3 +168,4 @@ jspm_packages
 # modules.xml
 # .idea/misc.xml 
 # *.ipr
+.idea/
