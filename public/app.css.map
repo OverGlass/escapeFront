@@ -1,0 +1,1 @@
+{"version":3,"sources":["app/global.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA","file":"public/app.css","sourcesContent":["/* This file contains global CSS which isn't\n   scoped to a particular module. \n   You can control which files are sent to app.css\n   in the brunch-config.js file. */\n\nbody, html {\n  padding: 0;\n  margin: 0;\n}\n"]}
