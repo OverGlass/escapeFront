@@ -7,8 +7,8 @@
 @include foundation-global-styles;
 @include foundation-grid;
 // @include foundation-flex-grid;
-//@include foundation-typography;
-//@include foundation-button;
+@include foundation-typography;
+@include foundation-button;
 @include foundation-forms;
 // @include foundation-range-input;
 //@include foundation-accordion;
@@ -24,7 +24,7 @@
 //@include foundation-dropdown;
 //@include foundation-dropdown-menu;
 //@include foundation-flex-video;
-//@include foundation-label;
+@include foundation-label;
 //@include foundation-media-object;
 //@include foundation-off-canvas;
 //@include foundation-orbit;
@@ -48,4 +48,11 @@
 
 @include motion-ui-transitions;
 @include motion-ui-animations;
+
+
+//FIX HIDDEN ANGULAR
+
+[hidden] {
+  display: none !important;
+}
 

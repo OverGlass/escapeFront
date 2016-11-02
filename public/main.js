@@ -149,7 +149,7 @@ var __makeRelativeRequire = function(require, mappings, pref) {
     return require(name);
   }
 };
-require.register("app.component.ts", function(exports, require, module) {
+require.register("Composents/app.component.ts", function(exports, require, module) {
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -167,7 +167,8 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app',
-            template: '<div>Hello word</div>',
+            template: '<h1>Escape wallah c\'est cool, info sûr</h1>' +
+                '<register></register>',
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
@@ -177,61 +178,16 @@ exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map
 });
 
-;require.register("app.module.ts", function(exports, require, module) {
+;require.register("Composents/index.component.ts", function(exports, require, module) {
 "use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var forms_1 = require('@angular/forms');
-var http_1 = require('@angular/http');
 var app_component_1 = require('./app.component');
-var AppModule = (function () {
-    function AppModule() {
-    }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [
-                platform_browser_1.BrowserModule,
-                forms_1.FormsModule,
-                http_1.HttpModule
-            ],
-            declarations: [
-                app_component_1.AppComponent,
-            ],
-            providers: [],
-            bootstrap: [app_component_1.AppComponent]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
-}());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.AppComponent = app_component_1.AppComponent;
+var register_component_1 = require("./register.component");
+exports.RegisterComponent = register_component_1.RegisterComponent;
+//# sourceMappingURL=index.component.js.map
 });
 
-;require.register("app.routes.ts", function(exports, require, module) {
-"use strict";
-//# sourceMappingURL=app.routes.js.map
-});
-
-require.register("main.ts", function(exports, require, module) {
-"use strict";
-require('./vendor');
-var platform_browser_dynamic_1 = require('@angular/platform-browser-dynamic');
-var app_module_1 = require('./app.module');
-platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
-//# sourceMappingURL=main.js.map
-});
-
-require.register("register.component.ts", function(exports, require, module) {
+require.register("Composents/register.component.ts", function(exports, require, module) {
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -243,32 +199,237 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var register_service_1 = require("../Services/register.service");
 var RegisterComponent = (function () {
-    function RegisterComponent() {
+    function RegisterComponent(_registerService) {
+        this._registerService = _registerService;
+        this.user = {
+            email: '',
+            password: '',
+            pseudo: ''
+        };
+        this.mode = 'Connection';
+        this.linkText = "Devenir un sportif collaboratif ?";
     }
+    RegisterComponent.prototype.onCreateUser = function () {
+        var _a = this.user, email = _a.email, password = _a.password, pseudo = _a.pseudo;
+        this._registerService.createUser(this.user);
+        console.log(JSON.stringify(this.user));
+        this.resetForm();
+    };
+    ;
+    RegisterComponent.prototype.resetForm = function () {
+        this.user = {
+            email: '',
+            password: '',
+            pseudo: ''
+        };
+    };
+    RegisterComponent.prototype.changeMode = function () {
+        if (this.mode === 'Connection') {
+            this.mode = 'Inscription';
+            this.linkText = 'Déja un sportif collaboratif ?';
+        }
+        else {
+            this.mode = 'Connection';
+            this.linkText = "Devenir un sportif collaboratif ?";
+        }
+    };
     RegisterComponent = __decorate([
         core_1.Component({
             selector: 'register',
             templateUrl: 'register.template.html',
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [(typeof (_a = typeof register_service_1.RegisterService !== 'undefined' && register_service_1.RegisterService) === 'function' && _a) || Object])
     ], RegisterComponent);
     return RegisterComponent;
+    var _a;
 }());
 exports.RegisterComponent = RegisterComponent;
 //# sourceMappingURL=register.component.js.map
 });
 
-;require.register("vendor.ts", function(exports, require, module) {
+;require.register("Services/api.service.ts", function(exports, require, module) {
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = require('@angular/core');
+var http_1 = require('@angular/http');
+var Observable_1 = require('rxjs/Observable');
+require('rxjs/Rx');
+require('rxjs/add/observable/throw');
+var ApiService = (function () {
+    function ApiService(http) {
+        this.http = http;
+        this.headers = new http_1.Headers({
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
+        });
+        this.api_url = 'http://localhost:3500';
+    }
+    ApiService.prototype.getJson = function (response) {
+        return response.json();
+    };
+    ApiService.prototype.checkForError = function (response) {
+        if (response.status >= 200 && response.status < 300) {
+            return response;
+        }
+        else {
+            var error = new Error(response.statusText);
+            error['response'] = response;
+            console.error(error);
+            throw error;
+        }
+    };
+    ApiService.prototype.get = function (path) {
+        return this.http.get("" + this.api_url + path, { headers: this.headers })
+            .map(this.checkForError)
+            .catch(function (err) { return Observable_1.Observable.throw(err); })
+            .map(this.getJson);
+    };
+    ApiService.prototype.post = function (path, body) {
+        return this.http.post("" + this.api_url + path, JSON.stringify(body), { headers: this.headers })
+            .map(this.checkForError)
+            .catch(function (err) { return Observable_1.Observable.throw(err); })
+            .map(this.getJson);
+    };
+    ApiService.prototype.delete = function (path) {
+        return this.http.delete("" + this.api_url + path, { headers: this.headers })
+            .map(this.checkForError)
+            .catch(function (err) { return Observable_1.Observable.throw(err); })
+            .map(this.getJson);
+    };
+    ApiService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof http_1.Http !== 'undefined' && http_1.Http) === 'function' && _a) || Object])
+    ], ApiService);
+    return ApiService;
+    var _a;
+}());
+exports.ApiService = ApiService;
+//# sourceMappingURL=api.service.js.map
+});
+
+;require.register("Services/index.service.ts", function(exports, require, module) {
+"use strict";
+var register_service_1 = require('./register.service');
+exports.RegisterService = register_service_1.RegisterService;
+//# sourceMappingURL=index.service.js.map
+});
+
+require.register("Services/register.service.ts", function(exports, require, module) {
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var http_1 = require("@angular/http");
+var core_1 = require("@angular/core");
+var RegisterService = (function () {
+    function RegisterService(_http) {
+        this._http = _http;
+        this._url = "https://jsonplaceholder.typicode.com/users";
+    }
+    RegisterService.prototype.createUser = function (user) {
+        return this._http.post(this._url, JSON.stringify(user));
+    };
+    RegisterService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof http_1.Http !== 'undefined' && http_1.Http) === 'function' && _a) || Object])
+    ], RegisterService);
+    return RegisterService;
+    var _a;
+}());
+exports.RegisterService = RegisterService;
+//# sourceMappingURL=register.service.js.map
+});
+
+;require.register("index.ts", function(exports, require, module) {
+"use strict";
+var services = require('./Services/index.service');
+var app_component_1 = require('./Composents/app.component');
+exports.AppComponent = app_component_1.AppComponent;
+var mapValuesToArray = function (obj) { return Object.keys(obj).map(function (key) { return obj[key]; }); };
+exports.providers = mapValuesToArray(services).slice();
+//# sourceMappingURL=index.js.map
+});
+
+require.register("main.ts", function(exports, require, module) {
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+require('./vendor');
+var core_1 = require('@angular/core');
+var platform_browser_1 = require('@angular/platform-browser');
+var forms_1 = require('@angular/forms');
+var http_1 = require('@angular/http');
+var platform_browser_dynamic_1 = require('@angular/platform-browser-dynamic');
+var index_1 = require('./index');
+var index_component_1 = require('./Composents/index.component');
+var Main = (function () {
+    function Main() {
+    }
+    Main = __decorate([
+        core_1.NgModule({
+            imports: [
+                platform_browser_1.BrowserModule,
+                forms_1.FormsModule,
+                forms_1.ReactiveFormsModule,
+                http_1.HttpModule
+            ],
+            declarations: [
+                index_component_1.AppComponent,
+                index_component_1.RegisterComponent
+            ],
+            providers: index_1.providers,
+            bootstrap: [index_component_1.AppComponent]
+        }), 
+        __metadata('design:paramtypes', [])
+    ], Main);
+    return Main;
+}());
+exports.Main = Main;
+platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(Main);
+//# sourceMappingURL=main.js.map
+});
+
+require.register("vendor.ts", function(exports, require, module) {
 "use strict";
 require('es6-shim');
 require('es6-promise');
 require('zone.js/dist/zone');
 require('reflect-metadata');
-require('@angular/compiler');
+require('@angular/platform-browser-dynamic');
 require('@angular/platform-browser');
+require('@angular/compiler');
+require('@angular/common');
+require('@angular/core');
+require('@angular/http');
+require('@angular/router');
 var core_1 = require('@angular/core');
-require('rxjs');
+require('rxjs/add/operator/map');
+require('rxjs/add/operator/catch');
+require('rxjs/add/observable/throw');
+require('rxjs/Rx');
 var production = 'production';
 if (production === 'development') {
     core_1.enableProdMode();
