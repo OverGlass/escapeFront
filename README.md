@@ -8,5 +8,5 @@
 
 * npm build
 
-## Lancé manuellement
-* L'index.html à lancé est dans /Public
+## Lancer manuellement
+* L'index.html à lancer est dans /public
