@@ -1,6 +1,6 @@
 import  { RouterModule } from '@angular/router';
 import { ModuleWithProviders} from '@angular/core';
-import {AppComponent, RegisterComponent} from './Composents/index.component';
+import {AppComponent, RegisterComponent} from './Composents';
 
 export const routes: ModuleWithProviders = RouterModule.forRoot([
     {

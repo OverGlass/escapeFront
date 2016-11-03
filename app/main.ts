@@ -6,7 +6,7 @@ import {HttpModule} from '@angular/http';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 
 import {providers, routes} from './index';
-import {AppComponent, RegisterComponent} from './Composents/index.component';
+import {AppComponent, RegisterComponent} from './Composents';
 
 @NgModule({
     imports: [
