@@ -1,5 +1,6 @@
-import * as services from './Services/index.service';
-export { AppComponent } from './Composents/app.component';
+import * as services from './Services';
+export { MainComponent } from './Composents';
+export {routes} from './routes';
 
 const mapValuesToArray = (obj) => Object.keys(obj).map(key => obj[key]);
 
