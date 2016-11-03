@@ -8,7 +8,7 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {App} from './app'
 
 import {providers, routes} from './index';
-import {MainComponent, RegisterComponent} from './Composents';
+import {MainComponent, RegisterComponent, NavComponent} from './Composents';
 
 
 @NgModule({
@@ -24,7 +24,9 @@ import {MainComponent, RegisterComponent} from './Composents';
     declarations: [
         MainComponent,
         RegisterComponent,
-        App
+        NavComponent,
+        App,
+
     ],
     providers,
     bootstrap: [App]

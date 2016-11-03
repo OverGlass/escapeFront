@@ -5,9 +5,8 @@ import {Component} from '@angular/core';
  * Top Level Component
  */
 @Component({
-  selector: 'main',
-  template: '<h1>Escape wallah c\'est cool, info sûr</h1>' +
-  '<register></register>',
+  selector: 'main-content',
+  template: '<h3>Page acceuil non log</h3>',
 })
 
 export class MainComponent {
