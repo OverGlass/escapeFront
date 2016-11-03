@@ -7,7 +7,7 @@ export const routes: ModuleWithProviders = RouterModule.forRoot([
         path: '',
         component: AppComponent,
         children: [
-            {path: '', components: RegisterComponent}
+            {path: 'register', components: RegisterComponent}
 
         ]
     },
