@@ -6,7 +6,7 @@ import {Observable} from 'rxjs/Rx';
 
 @Injectable()
 export class RegisterService {
-    private _url = "https://jsonplaceholder.typicode.com/users";
+    private _url = "http://localhost/escape/web/app_dev.php/antonin";
     constructor(private _http: Http){}
 
     createUser(user){
