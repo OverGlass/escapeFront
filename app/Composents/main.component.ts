@@ -5,10 +5,10 @@ import {Component} from '@angular/core';
  * Top Level Component
  */
 @Component({
-  selector: 'app',
+  selector: 'main',
   template: '<h1>Escape wallah c\'est cool, info sûr</h1>' +
   '<register></register>',
 })
 
-export class AppComponent {
+export class MainComponent {
 }

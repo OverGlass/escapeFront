@@ -5,8 +5,11 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 
+import {App} from './app'
+
 import {providers, routes} from './index';
-import {AppComponent, RegisterComponent} from './Composents';
+import {MainComponent, RegisterComponent} from './Composents';
+
 
 @NgModule({
     imports: [
@@ -19,11 +22,12 @@ import {AppComponent, RegisterComponent} from './Composents';
         routes,
     ],
     declarations: [
-        AppComponent,
-        RegisterComponent
+        MainComponent,
+        RegisterComponent,
+        App
     ],
     providers,
-    bootstrap: [AppComponent]
+    bootstrap: [App]
 })
 export class Main {}
 platformBrowserDynamic().bootstrapModule(Main);

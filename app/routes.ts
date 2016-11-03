@@ -1,15 +1,15 @@
 import  { RouterModule } from '@angular/router';
 import { ModuleWithProviders} from '@angular/core';
-import {AppComponent, RegisterComponent} from './Composents';
+import {MainComponent, RegisterComponent} from './Composents';
 
-export const routes: ModuleWithProviders = RouterModule.forRoot([
+export const Routes: ModuleWithProviders = RouterModule.forRoot([
     {
         path: '',
-        component: AppComponent,
+        component: MainComponent,
         children: [
-            {path: 'register', components: RegisterComponent}
+            {path: '', components: RegisterComponent}
 
         ]
     },
     {path: '**', redirectTo:''}
-])
+]);
