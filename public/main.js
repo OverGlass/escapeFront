@@ -349,6 +349,8 @@ exports.RegisterService = RegisterService;
 var services = require('./Services/index.service');
 var app_component_1 = require('./Composents/app.component');
 exports.AppComponent = app_component_1.AppComponent;
+var routes_1 = require('./routes');
+exports.routes = routes_1.routes;
 var mapValuesToArray = function (obj) { return Object.keys(obj).map(function (key) { return obj[key]; }); };
 exports.providers = mapValuesToArray(services).slice();
 //# sourceMappingURL=index.js.map
@@ -400,7 +402,24 @@ platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(Main);
 //# sourceMappingURL=main.js.map
 });
 
-require.register("vendor.ts", function(exports, require, module) {
+require.register("routes.ts", function(exports, require, module) {
+"use strict";
+var router_1 = require('@angular/router');
+var index_component_1 = require('./Composents/index.component');
+exports.routes = router_1.RouterModule.forRoot([
+    {
+        path: '',
+        component: index_component_1.AppComponent,
+        children: [
+            { path: '', components: index_component_1.RegisterComponent }
+        ]
+    },
+    { path: '**', redirectTo: '' }
+]);
+//# sourceMappingURL=routes.js.map
+});
+
+;require.register("vendor.ts", function(exports, require, module) {
 "use strict";
 require('es6-shim');
 require('es6-promise');

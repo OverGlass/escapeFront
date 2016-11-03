@@ -169,3 +169,4 @@ jspm_packages
 # .idea/misc.xml 
 # *.ipr
 .idea/
+public/
