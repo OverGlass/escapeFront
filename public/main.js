@@ -384,7 +384,8 @@ var Main = (function () {
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
                 forms_1.ReactiveFormsModule,
-                http_1.HttpModule
+                http_1.HttpModule,
+                index_1.routes,
             ],
             declarations: [
                 index_component_1.AppComponent,

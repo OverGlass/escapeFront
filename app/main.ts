@@ -5,7 +5,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 
-import {providers} from './index';
+import {providers, routes} from './index';
 import {AppComponent, RegisterComponent} from './Composents/index.component';
 
 @NgModule({
@@ -15,7 +15,8 @@ import {AppComponent, RegisterComponent} from './Composents/index.component';
         ReactiveFormsModule,
 
         // routing,
-        HttpModule
+        HttpModule,
+        routes,
     ],
     declarations: [
         AppComponent,
