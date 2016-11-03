@@ -31,13 +31,14 @@ export class RegisterComponent {
     // CLICK SUBMIT
 
     onCreateUser(){
-        const {
-            email,
-            password,
-            pseudo
-        } = this.user;
 
-        this._registerService.createUser(this.user);
+        let commentOperation = this._registerService.createUser(this.user);
+
+        commentOperation.subscribe(
+            err => {
+                // Log errors if any
+                console.log(err);
+            });
 
         console.log(JSON.stringify(this.user));
         this.resetForm();
