@@ -16,12 +16,18 @@ export class RegisterComponent {
 
     }
 
+
+    // INPUT FORMULAIRE
+
     user = {
         email: '',
         password:'',
         pseudo:''
 
     };
+
+
+    // CLICK SUBMIT
 
     onCreateUser(){
         const {
@@ -36,6 +42,7 @@ export class RegisterComponent {
         this.resetForm();
     };
 
+
     resetForm(){
         this.user = {
             email: '',
@@ -45,21 +52,4 @@ export class RegisterComponent {
         };
     }
 
-
-
-    mode: string = 'Connection';
-    linkText: string= "Devenir un sportif collaboratif ?";
-
-    changeMode() {
-        if (this.mode === 'Connection') {
-            this.mode ='Inscription';
-            this.linkText = 'Déja un sportif collaboratif ?'
-        } else {
-            this.mode = 'Connection';
-            this.linkText= "Devenir un sportif collaboratif ?"
-        }
-    }
-
-
-    On
 }

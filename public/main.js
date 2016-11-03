@@ -208,8 +208,6 @@ var RegisterComponent = (function () {
             password: '',
             pseudo: ''
         };
-        this.mode = 'Connection';
-        this.linkText = "Devenir un sportif collaboratif ?";
     }
     RegisterComponent.prototype.onCreateUser = function () {
         var _a = this.user, email = _a.email, password = _a.password, pseudo = _a.pseudo;
@@ -224,16 +222,6 @@ var RegisterComponent = (function () {
             password: '',
             pseudo: ''
         };
-    };
-    RegisterComponent.prototype.changeMode = function () {
-        if (this.mode === 'Connection') {
-            this.mode = 'Inscription';
-            this.linkText = 'Déja un sportif collaboratif ?';
-        }
-        else {
-            this.mode = 'Connection';
-            this.linkText = "Devenir un sportif collaboratif ?";
-        }
     };
     RegisterComponent = __decorate([
         core_1.Component({
