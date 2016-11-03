@@ -1,6 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {NgForm, FormBuilder, Validators, FormControl} from '@angular/forms';
 import {Http} from "@angular/http";
+import {Observable} from 'rxjs/Rx';
 import {RegisterService} from "../Services/register.service";
 
 
@@ -41,6 +42,7 @@ export class RegisterComponent {
         console.log(JSON.stringify(this.user));
         this.resetForm();
     };
+
 
 
     resetForm(){
