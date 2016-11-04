@@ -117,7 +117,6 @@
 
 (function() {
 var global = window;
-var process;
 var __makeRelativeRequire = function(require, mappings, pref) {
   var none = {};
   var tryReq = function(name, pref) {
@@ -45349,6 +45348,17 @@ function blitBuffer (src, dst, offset, length) {
   })();
 });
 
+require.register("buffer/node_modules/isarray/index.js", function(exports, require, module) {
+  require = __makeRelativeRequire(require, {}, "buffer/node_modules/isarray");
+  (function() {
+    var toString = {}.toString;
+
+module.exports = Array.isArray || function (arr) {
+  return toString.call(arr) == '[object Array]';
+};
+  })();
+});
+
 require.register("es6-promise/dist/es6-promise.js", function(exports, require, module) {
   require = __makeRelativeRequire(require, {"vertx":false}, "es6-promise");
   (function() {
@@ -50379,17 +50389,6 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 
   buffer[offset + i - d] |= s * 128
 }
-  })();
-});
-
-require.register("isarray/index.js", function(exports, require, module) {
-  require = __makeRelativeRequire(require, {}, "isarray");
-  (function() {
-    var toString = {}.toString;
-
-module.exports = Array.isArray || function (arr) {
-  return toString.call(arr) == '[object Array]';
-};
   })();
 });
 
@@ -71283,13 +71282,12 @@ require.alias("@angular/http/bundles/http.umd.js", "@angular/http");
 require.alias("@angular/platform-browser/bundles/platform-browser.umd.js", "@angular/platform-browser");
 require.alias("@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js", "@angular/platform-browser-dynamic");
 require.alias("@angular/router/bundles/router.umd.js", "@angular/router");
-require.alias("buffer/index.js", "buffer");
 require.alias("es6-promise/dist/es6-promise.js", "es6-promise");
 require.alias("es6-shim/es6-shim.js", "es6-shim");
 require.alias("process/browser.js", "process");
 require.alias("reflect-metadata/Reflect.js", "reflect-metadata");
 require.alias("rxjs/Rx.js", "rxjs");
-require.alias("zone.js/dist/zone.js", "zone.js");process = require('process');require.register("___globals___", function(exports, require, module) {
+require.alias("zone.js/dist/zone.js", "zone.js");require.register("___globals___", function(exports, require, module) {
   
 });})();require('___globals___');
 

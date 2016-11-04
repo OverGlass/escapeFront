@@ -42,6 +42,11 @@
 
 @import 'util/util';
 
+// Mes variables
+
+$bg-site: #dd2222;
+$bg-onglet : #dd4444;
+
 // 1. Global
 // ---------
 
@@ -380,7 +385,7 @@ $menu-margin: 0;
 $menu-margin-nested: 1rem;
 $menu-item-padding: 0.7rem 1rem;
 $menu-item-color-active: $white;
-$menu-item-background-active: map-get($foundation-palette, primary);
+$menu-item-background-active: $bg-onglet;
 $menu-icon-spacing: 0.25rem;
 
 // 23. Meter
@@ -558,8 +563,8 @@ $tooltip-radius: $global-radius;
 // 36. Top Bar
 // -----------
 
-$topbar-padding: 0.5rem;
-$topbar-background: $light-gray;
+$topbar-padding: 0 0.5rem;
+$topbar-background: $bg-site;
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 1rem;
 $topbar-input-width: 200px;
