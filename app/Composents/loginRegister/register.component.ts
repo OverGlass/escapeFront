@@ -23,7 +23,8 @@ export class RegisterComponent {
     user = {
         email: '',
         password:'',
-        pseudo:''
+        username:'',
+        firstname:'',
 
     };
 
@@ -50,7 +51,8 @@ export class RegisterComponent {
         this.user = {
             email: '',
             password:'',
-            pseudo:''
+            username:'',
+            firstname:'',
 
         };
     }

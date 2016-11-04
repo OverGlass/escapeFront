@@ -8,8 +8,9 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {App} from './app'
 
 import {providers, routes} from './index';
-import {MainComponent, RegisterComponent, NavComponent, HomeAuth,LoginComponent} from './Composents';
+import {MainComponent, RegisterComponent, NavComponent, HomeAuth,LoginComponent,addEventComponent} from './Composents';
 import {AuthPage} from "./Composents/loginRegister/authpage.component";
+
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import {AuthPage} from "./Composents/loginRegister/authpage.component";
         NavComponent,
         HomeAuth,
         AuthPage,
+        addEventComponent,
         App,
 
     ],

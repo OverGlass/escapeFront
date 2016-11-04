@@ -13,41 +13,19 @@
                 Ce champ est obligatoire !
             </span>
 
-            <label for="username">Votre nom</label>
+            <label for="username">Votre pseudo</label>
             <input
                     id="username"
                     name="username"
                     required
-                    [(ngModel)]="user.username"
+                    [(ngModel)]="user.pseudo"
                     type="text"
-                    placeholder="Votre nom"
+                    placeholder="Username"
                     #username = "ngModel"
             >
 
 
         </div>
-
-        <div class="medium-12 columns">
-
-            <!--<span class="warning label"> Déjà prit :S</span>-->
-            <span class="warning label" [hidden]="username.valid || username.pristine">
-                Ce champ est obligatoire !
-            </span>
-
-            <label for="firstname">Votre prénom</label>
-            <input
-                    id="firstname"
-                    name="firstname"
-                    required
-                    [(ngModel)]="user.firstname"
-                    type="text"
-                    placeholder="Votre prénom"
-                    #username = "ngModel"
-            >
-
-
-        </div>
-
 
 
         <!--EMAIL-->
@@ -77,12 +55,11 @@
                     name="password"
                     required
                     [(ngModel)]="user.password"
-                    type="password"
+                    type="text"
                     placeholder="Password"
                     #password = "ngModel"
             >
         </div>
-
 
 
 
