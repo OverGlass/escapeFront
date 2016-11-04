@@ -10,10 +10,19 @@ import {AuthService} from "../Services";
     templateUrl: 'login.template.html'
 })
 export class LoginComponent {
-    constructor(private userService: AuthService, private router: Router) {}
+    constructor(
+        private userService: AuthService,
+        private router: Router
+    ) {}
 
-    onSubmit(email, password) {
-        this.userService.login(email, password).subscribe((result) => {
+    user = {
+        email: '',
+        password:'',
+
+    };
+
+    onLogin() {
+        this.userService.login(this.user).subscribe((result) => {
             if (result) {
                 this.router.navigate(['']);
             }

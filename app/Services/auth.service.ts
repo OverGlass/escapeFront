@@ -4,19 +4,20 @@ import { Http, Headers } from '@angular/http';
 @Injectable()
 export class AuthService {
     private loggedIn = false;
-
+    private _url = "http://localhost/escape/web/app_dev.php/antonin";
     constructor(private http: Http) {
         this.loggedIn = !!localStorage.getItem('auth_token');
+
     }
 
-    login(email, password) {
+    login(UserData) {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
         return this.http
             .post(
-                '/login',
-                JSON.stringify({ email, password }),
+                this._url,
+                JSON.stringify({UserData}),
                 { headers }
             )
             .map(res => res.json())
