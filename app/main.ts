@@ -9,6 +9,7 @@ import {App} from './app'
 
 import {providers, routes} from './index';
 import {MainComponent, RegisterComponent, NavComponent, HomeAuth,LoginComponent} from './Composents';
+import {AuthPage} from "./Composents/loginRegister/authpage.component";
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import {MainComponent, RegisterComponent, NavComponent, HomeAuth,LoginComponent}
         LoginComponent,
         NavComponent,
         HomeAuth,
+        AuthPage,
         App,
 
     ],

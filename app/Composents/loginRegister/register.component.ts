@@ -2,7 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {NgForm, FormBuilder, Validators, FormControl} from '@angular/forms';
 import {Http} from "@angular/http";
 import {Observable} from 'rxjs/Rx';
-import {RegisterService} from "../Services";
+import {RegisterService} from "../../Services";
 
 
 @Component({

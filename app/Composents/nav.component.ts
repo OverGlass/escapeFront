@@ -4,11 +4,11 @@ import {Component} from "@angular/core";
     selector:'nav',
     template: `
 <ul class="menu">
-  <li><a [routerLink]="['', 'register']">Register</a></li>
-  <li><a [routerLink]="['', 'login']">Login</a></li>
-  <li><a [routerLink]="['', '']">Home</a></li>
+  <li [routerLink]="['/auth']" [routerLinkActive]="['active']"><a>Login / Register</a></li>
+  <li [routerLink]="['/main-component']" [routerLinkActive]="['active']"><a>Home</a></li>
 </ul>
 `
 })
 
-export class NavComponent {}
+export class NavComponent {
+}
