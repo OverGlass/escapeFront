@@ -8,8 +8,14 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class RegisterService {
+
     private _url = "http://localhost/escape/web/app_dev.php/antonin";
-    constructor(private _http: Http){}
+    constructor(
+        private _http: Http,
+    ){}
+
+
+
 
     createUser(user){
 
