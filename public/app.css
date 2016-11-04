@@ -7,8 +7,23 @@
 .logo {
   height: 80px; }
 
-.menu li a {
-  color: white; }
+.top-bar {
+  position: relative; }
+  .top-bar .top-bar-right .menu {
+    position: absolute;
+    bottom: 0;
+    left: 100px; }
+    .top-bar .top-bar-right .menu li a {
+      color: white; }
+
+.main {
+  background-color: #dd4444;
+  margin: 0 10px; }
+  .main .row .row {
+    margin: 10px; }
+    .main .row .row .facebook-register {
+      background-color: #dd6666;
+      text-align: center; }
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
@@ -385,7 +400,7 @@ body {
   font-weight: normal;
   line-height: 1.5;
   color: #0a0a0a;
-  background: #fefefe;
+  background: #dd2222;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
@@ -446,8 +461,8 @@ button {
     padding-left: 0;
     padding-right: 0; }
   .row .row {
-    margin-left: -0.625rem;
-    margin-right: -0.625rem; }
+    margin-left: -0.3125rem;
+    margin-right: -0.3125rem; }
     @media screen and (min-width: 40em) {
       .row .row {
         margin-left: -0.9375rem;
@@ -464,8 +479,8 @@ button {
 .column, .columns {
   width: 100%;
   float: left;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem; }
+  padding-left: 0.3125rem;
+  padding-right: 0.3125rem; }
   @media screen and (min-width: 40em) {
     .column, .columns {
       padding-left: 0.9375rem;
@@ -737,8 +752,8 @@ button {
   margin-right: 0; }
 
 .small-uncollapse > .column, .small-uncollapse > .columns {
-  padding-left: 0.625rem;
-  padding-right: 0.625rem; }
+  padding-left: 0.3125rem;
+  padding-right: 0.3125rem; }
 
 .small-centered {
   margin-left: auto;
@@ -1776,7 +1791,7 @@ legend {
   padding: 1.25rem;
   margin: 1.125rem 0; }
   .fieldset legend {
-    background: #fefefe;
+    background: #dd2222;
     padding: 0 0.1875rem;
     margin: 0;
     margin-left: -0.1875rem; }
@@ -2485,8 +2500,23 @@ select {
 .logo {
   height: 80px; }
 
-.menu li a {
-  color: white; }
+.top-bar {
+  position: relative; }
+  .top-bar .top-bar-right .menu {
+    position: absolute;
+    bottom: 0;
+    left: 100px; }
+    .top-bar .top-bar-right .menu li a {
+      color: white; }
+
+.main {
+  background-color: #dd4444;
+  margin: 0 10px; }
+  .main .row .row {
+    margin: 10px; }
+    .main .row .row .facebook-register {
+      background-color: #dd6666;
+      text-align: center; }
 
 
 /*# sourceMappingURL=app.css.map*/

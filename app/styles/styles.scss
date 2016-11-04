@@ -1,11 +1,40 @@
+// Mes variables
+
+$bg-site: #dd2222;
+$bg-onglet : #dd4444;
+$bg-block-clair : #dd6666;
+
 .logo{
   height:80px;
 }
 
-.menu {
-  li{
-    a{
-      color: white;
+.top-bar {
+  position: relative;
+  .top-bar-right {
+    .menu {
+      position: absolute;
+      bottom: 0;
+      left: 100px;
+      li {
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+
+.main{
+  background-color: $bg-onglet;
+  margin: 0 10px;
+  .row {
+    .row {
+      margin: 10px;
+      .facebook-register {
+        background-color: $bg-block-clair;
+        text-align: center;
+      }
     }
   }
 }
