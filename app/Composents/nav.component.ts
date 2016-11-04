@@ -5,6 +5,7 @@ import {Component} from "@angular/core";
     template: `
 <ul class="menu">
   <li><a [routerLink]="['', 'register']">Register</a></li>
+  <li><a [routerLink]="['', 'login']">Login</a></li>
   <li><a [routerLink]="['', '']">Home</a></li>
 </ul>
 `
