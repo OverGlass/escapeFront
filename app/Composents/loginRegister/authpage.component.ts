@@ -7,15 +7,20 @@ import {Component} from '@angular/core';
 @Component({
     selector: 'authpage',
     template: `
-  <hr>
-<ul class="menu">
-  <li [routerLink]="['login']" [routerLinkActive]="['active']"><a >Login</a></li>
-  <li [routerLink]="['register']" [routerLinkActive]="['active']"><a >Register</a></li>
+<page-transition>
+  <div class="row">
+    <ul class="menu">
+       <li [routerLink]="['login']" [routerLinkActive]="['active']"><a >Login</a></li>
+       <li [routerLink]="['register']" [routerLinkActive]="['active']"><a >Register</a></li>
+    </ul>
+  </div>
+    
+  <div>
+    <router-outlet></router-outlet>
+   </div>
+</page-transition>
+      
 
-</ul>
-    <div>
-      <router-outlet></router-outlet>
-    </div>
 `,
 })
 

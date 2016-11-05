@@ -8,7 +8,7 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {App} from './app'
 
 import {providers, routes} from './index';
-import {MainComponent, RegisterComponent, NavComponent, HomeAuth,LoginComponent,addEventComponent} from './Composents';
+import {MainComponent, RegisterComponent, pageTransition, HomeAuth,LoginComponent,addEventComponent} from './Composents';
 import {AuthPage} from "./Composents/loginRegister/authpage.component";
 
 
@@ -27,11 +27,11 @@ import {AuthPage} from "./Composents/loginRegister/authpage.component";
         MainComponent,
         RegisterComponent,
         LoginComponent,
-        NavComponent,
         HomeAuth,
         AuthPage,
         addEventComponent,
         App,
+        pageTransition,
 
     ],
     providers,
