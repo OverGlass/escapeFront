@@ -56,3 +56,36 @@
   display: none !important;
 }
 
+body {
+  width:100vw;
+  min-height:100vh;
+  overflow: hidden;
+  position: relative;
+}
+.bigPage {
+  width: 200vw;
+  height: 200vh;
+  position: absolute;
+  margin: 0 0 0 -100vw;
+  top:-50vh;
+  left: 50vw;
+
+
+}
+
+.vpPage {
+  width:100vw;
+  min-height:100vh;
+position: absolute;
+  margin:auto;
+  top: 25%;
+  left: 25%;
+}
+
+#homePublic.bigPage {
+  background-color: #DE3D3D;
+}
+
+#authPage.bigPage {
+  background-color: #B60000;
+}

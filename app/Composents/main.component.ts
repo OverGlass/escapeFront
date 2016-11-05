@@ -15,7 +15,7 @@ import {Animations} from '../Services/animation';
 
 
 `,
-  styles: [':host { width: 100%; display: block; position: absolute; }'],
+  styles: [':host {z-index:100; width: 100%; display: block; position: absolute; }'],
   host: { '[@routeAnimation]': 'true' },
   animations:Animations.page,
 })
