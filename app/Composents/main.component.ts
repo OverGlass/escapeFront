@@ -9,7 +9,7 @@ import {Animations} from '../Services/animation';
   selector: 'main-content',
   template:
 `
-<page-transition [pageId]="pageId">
+<page-transition [pageId]="pageId" [menuColor]="menuColor">
   <h3>Page PUBLIC HOME</h3>
  </page-transition>
 
@@ -22,4 +22,5 @@ import {Animations} from '../Services/animation';
 
 export class MainComponent {
   pageId = "homePublic";
+  menuColor= "rgb(182,0,0)";
 }

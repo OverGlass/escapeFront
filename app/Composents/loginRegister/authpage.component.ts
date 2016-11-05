@@ -8,7 +8,7 @@ import {Animations} from '../../Services/animation';
 @Component({
     selector: 'authpage',
     template: `
-<page-transition [pageId]="pageId">
+<page-transition [pageId]="pageId" [menuColor]="menuColor">
   <div class="row">
     <ul class="menu">
        <li [routerLink]="['login']" [routerLinkActive]="['active']"><a >Login</a></li>
@@ -31,4 +31,6 @@ import {Animations} from '../../Services/animation';
 
 export class AuthPage {
     pageId = "authPage";
+    menuColor = "rgb(222,61,61)";
+
 }

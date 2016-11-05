@@ -7,13 +7,14 @@ export class Animations {
             state('in', style({transform:'translate(100vh, 100vh)'})),
             transition('void => *', [
                 style({
-                    transform:'translate(100vw, 100vh)',
+                    transform:'translate(150vw, 150vh)',
                     zIndex:'100',
+
                 }),
-                animate(1500)
+                animate(500)
             ]),
             transition('* => void', [
-                animate(1500, style({
+                animate(500, style({
                     transform:'translate(-100vw, -100vh)',
                     zIndex:'-100',
                 }))

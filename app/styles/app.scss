@@ -63,12 +63,20 @@ body {
   position: relative;
 }
 .bigPage {
-  width: 200vw;
-  height: 200vh;
+  width: 300vw;
+  height: 300vh;
   position: absolute;
   margin: 0 0 0 -100vw;
-  top:-50vh;
-  left: 50vw;
+  //top:-50vh;
+  left: 25vw;
+  #triMenu {
+    position:absolute;
+    bottom: 0;
+    right:0;
+    width:800vh;
+    height:800vh;
+    pointer-events: none;
+  }
 
 
 }
@@ -78,7 +86,7 @@ body {
   min-height:100vh;
 position: absolute;
   margin:auto;
-  top: 25%;
+  //top: 25%;
   left: 25%;
 }
 
