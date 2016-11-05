@@ -1,4 +1,6 @@
 import {Component, Input} from "@angular/core";
+
+
 @Component({
     selector:'page-transition',
     template:
@@ -25,6 +27,7 @@ import {Component, Input} from "@angular/core";
 </section> <!-- Fin bigPage -->
 
 `,
+
 })
 
 

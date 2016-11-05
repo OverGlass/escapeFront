@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Animations} from '../Services/animation';
 
 /*
  * App Component
@@ -14,7 +15,9 @@ import {Component} from '@angular/core';
 
 
 `,
-
+  styles: [':host { width: 100%; display: block; position: absolute; }'],
+  host: { '[@routeAnimation]': 'true' },
+  animations:Animations.page,
 })
 
 export class MainComponent {

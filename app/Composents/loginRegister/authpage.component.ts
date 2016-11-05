@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Animations} from '../../Services/animation';
 
 /*
  * App Component
@@ -7,7 +8,7 @@ import {Component} from '@angular/core';
 @Component({
     selector: 'authpage',
     template: `
-<page-transition>
+<page-transition [pageId]="pageId">
   <div class="row">
     <ul class="menu">
        <li [routerLink]="['login']" [routerLinkActive]="['active']"><a >Login</a></li>
@@ -22,7 +23,12 @@ import {Component} from '@angular/core';
       
 
 `,
+    styles: [':host { width: 100%; display: block; position: absolute; }'],
+    host: { '[@routeAnimation]': 'true' },
+    animations:Animations.page,
 })
 
+
 export class AuthPage {
+    pageId = "authPage";
 }
