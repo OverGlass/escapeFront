@@ -14,33 +14,57 @@
     bottom: 0;
     left: 100px; }
     .top-bar .top-bar-right .menu li a {
-      color: white; }
+      color: white;
+      font-weight: bold; }
 
 .main {
   background-color: #dd4444;
   margin: 0 10px; }
   .main .row h1 {
     color: #ddaaaa;
+    font-weight: bold;
     margin-bottom: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
     margin-top: 10px;
-    margin-left: 5px; }
+    display: inline-block;
+    width: 20%; }
+  .main .row .barre {
+    box-sizing: border-box;
+    display: inline-block;
+    border: 1px solid #ddaaaa;
+    width: 70%; }
   .main .row .row {
-    margin: 10px; }
+    margin: 10px;
+    font-weight: bold; }
     .main .row .row .facebook-register {
       background-color: #dd8888;
       text-align: center;
       height: 60px;
-      padding-top: 20px; }
+      padding-top: 20px;
+      text-transform: uppercase; }
     .main .row .row input {
       background-color: #dd6666;
       width: 100%;
       height: 60px; }
+    .main .row .row ::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
+      color: #ddaaaa; }
+    .main .row .row ::-moz-placeholder {
+      /* Firefox 19+ */
+      color: #ddaaaa; }
+    .main .row .row :-ms-input-placeholder {
+      /* IE 10+ */
+      color: #ddaaaa; }
+    .main .row .row :-moz-placeholder {
+      /* Firefox 18- */
+      color: #ddaaaa; }
     .main .row .row .envoi {
       height: 180px;
       background-color: #dd8888;
       color: #ddcccc;
-      font-weight: bold;
-      font-size: 80px; }
+      font-size: 80px;
+      border: none; }
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
@@ -413,7 +437,7 @@ html {
 body {
   padding: 0;
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "PT Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-weight: normal;
   line-height: 1.5;
   color: #0a0a0a;
@@ -1261,7 +1285,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "PT Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-weight: normal;
   font-style: normal;
   color: inherit;
@@ -1664,23 +1688,23 @@ textarea {
   width: 100%;
   height: 2.4375rem;
   padding: 0.5rem;
-  border: 0px solid #cacaca;
+  border: none;
   margin: 0 0 1rem;
   font-family: inherit;
   font-size: 1rem;
-  color: #0a0a0a;
+  color: #ddaaaa;
   background-color: #fefefe;
-  box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+  box-shadow: none;
   border-radius: 0;
   transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
   -webkit-appearance: none;
   -moz-appearance: none; }
   [type='text']:focus, [type='password']:focus, [type='date']:focus, [type='datetime']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='week']:focus, [type='email']:focus, [type='number']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='url']:focus, [type='color']:focus,
   textarea:focus {
-    border: 1px solid #8a8a8a;
+    border: none;
     background-color: #fefefe;
     outline: none;
-    box-shadow: 0 0 5px #cacaca;
+    box-shadow: inset 0 0 3px 1px #dd8888;
     transition: box-shadow 0.5s, border-color 0.25s ease-in-out; }
 
 textarea {
@@ -1690,7 +1714,7 @@ textarea {
 
 input::placeholder,
 textarea::placeholder {
-  color: #ddaaaa; }
+  color: #cacaca; }
 
 input:disabled, input[readonly],
 textarea:disabled,
@@ -1767,14 +1791,10 @@ label {
   padding: 0 1rem;
   background: #e6e6e6;
   color: #0a0a0a;
-  border: 0px solid #cacaca;
+  border: none;
   white-space: nowrap;
   width: 1%;
   height: 100%; }
-  .input-group-label:first-child {
-    border-right: 0; }
-  .input-group-label:last-child {
-    border-left: 0; }
 
 .input-group-field {
   border-radius: 0;
@@ -1816,12 +1836,12 @@ legend {
 select {
   height: 2.4375rem;
   padding: 0.5rem;
-  border: 0px solid #cacaca;
+  border: none;
   margin: 0 0 1rem;
   font-size: 1rem;
   font-family: inherit;
   line-height: normal;
-  color: #0a0a0a;
+  color: #ddaaaa;
   background-color: #fefefe;
   border-radius: 0;
   -webkit-appearance: none;
@@ -2524,33 +2544,57 @@ select {
     bottom: 0;
     left: 100px; }
     .top-bar .top-bar-right .menu li a {
-      color: white; }
+      color: white;
+      font-weight: bold; }
 
 .main {
   background-color: #dd4444;
   margin: 0 10px; }
   .main .row h1 {
     color: #ddaaaa;
+    font-weight: bold;
     margin-bottom: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
     margin-top: 10px;
-    margin-left: 5px; }
+    display: inline-block;
+    width: 20%; }
+  .main .row .barre {
+    box-sizing: border-box;
+    display: inline-block;
+    border: 1px solid #ddaaaa;
+    width: 70%; }
   .main .row .row {
-    margin: 10px; }
+    margin: 10px;
+    font-weight: bold; }
     .main .row .row .facebook-register {
       background-color: #dd8888;
       text-align: center;
       height: 60px;
-      padding-top: 20px; }
+      padding-top: 20px;
+      text-transform: uppercase; }
     .main .row .row input {
       background-color: #dd6666;
       width: 100%;
       height: 60px; }
+    .main .row .row ::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
+      color: #ddaaaa; }
+    .main .row .row ::-moz-placeholder {
+      /* Firefox 19+ */
+      color: #ddaaaa; }
+    .main .row .row :-ms-input-placeholder {
+      /* IE 10+ */
+      color: #ddaaaa; }
+    .main .row .row :-moz-placeholder {
+      /* Firefox 18- */
+      color: #ddaaaa; }
     .main .row .row .envoi {
       height: 180px;
       background-color: #dd8888;
       color: #ddcccc;
-      font-weight: bold;
-      font-size: 80px; }
+      font-size: 80px;
+      border: none; }
 
 
 /*# sourceMappingURL=app.css.map*/
