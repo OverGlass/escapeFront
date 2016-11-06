@@ -1,6 +1,7 @@
 import {Http, Response, Headers, RequestOptions} from "@angular/http";
 import {Injectable } from "@angular/core";
 import {Observable} from 'rxjs/Rx';
+import {User} from './TypeChecking';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
@@ -18,7 +19,7 @@ export class UserService {
 
 
 
-    getUsers(){
+    getUsers() :Observable<User>{
 
         return this._http.get(this._url + this.userID)
             // .map(this.extractData)

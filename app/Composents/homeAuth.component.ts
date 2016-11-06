@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Animations, AuthService, UserService, GeolocationService} from '../Services';
 import {Router} from '@angular/router';
+// import {User} from "../Services/TypeChecking/user";
+// import {Observable} from 'rxjs/Rx';
 
 /*
  * App Component
@@ -11,7 +13,7 @@ import {Router} from '@angular/router';
   template:
 `
 <page-transition [pageId]="pageId" [menuColor]="menuColor">
-  <h3>Bienvenue {{users.firstname}} {{users.username}}</h3>
+  <h3>Bienvenue {{users}} {{users.username}}</h3>
   <span class="button expend" (click)="onLogout()">Se deconnecter</span>
  </page-transition>
 
@@ -23,7 +25,7 @@ import {Router} from '@angular/router';
 })
 
 export class HomeAuth implements OnInit{
-  users = {};
+  users={};
   pageId = "homePrivate";
   // menuColor= "rgb(182,0,0)";
   menuColor= "rgb(202,202,202)";
