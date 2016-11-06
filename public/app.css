@@ -23,17 +23,17 @@
   .main .row h1 {
     color: #ddaaaa;
     font-weight: bold;
-    margin-bottom: 20px;
     margin-left: 5px;
     margin-right: 5px;
     margin-top: 10px;
-    display: inline-block;
-    width: 20%; }
+    display: inline-block; }
   .main .row .barre {
     box-sizing: border-box;
     display: inline-block;
     border: 1px solid #ddaaaa;
-    width: 70%; }
+    width: 50%; }
+  .main .row p {
+    color: white; }
   .main .row .row {
     margin: 10px;
     font-weight: bold; }
@@ -2553,17 +2553,17 @@ select {
   .main .row h1 {
     color: #ddaaaa;
     font-weight: bold;
-    margin-bottom: 20px;
     margin-left: 5px;
     margin-right: 5px;
     margin-top: 10px;
-    display: inline-block;
-    width: 20%; }
+    display: inline-block; }
   .main .row .barre {
     box-sizing: border-box;
     display: inline-block;
     border: 1px solid #ddaaaa;
-    width: 70%; }
+    width: 50%; }
+  .main .row p {
+    color: white; }
   .main .row .row {
     margin: 10px;
     font-weight: bold; }

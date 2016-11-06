@@ -36,18 +36,19 @@ $text-clair : #ddcccc;
     h1 {
       color: $text-fonce;
       font-weight: bold;
-      margin-bottom: 20px;
       margin-left: 5px;
       margin-right: 5px;
       margin-top: 10px;
       display: inline-block;
-      width: 20%;
     }
     .barre{
       box-sizing: border-box;
       display: inline-block;
       border: 1px solid $text-fonce;
-      width: 70%;
+      width: 50%; //à adapter
+    }
+    p{
+      color: white;
     }
     .row {
       margin: 10px;
