@@ -31,6 +31,7 @@ import {Animations} from '../../Services/animation';
 
 export class AuthPage {
     pageId = "authPage";
-    menuColor = "rgb(222,61,61)";
+    // menuColor = "rgb(222,61,61)";
+     menuColor = "rgb(230,230,230)";
 
 }
