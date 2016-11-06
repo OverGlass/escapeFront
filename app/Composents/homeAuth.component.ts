@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {Animations, AuthService} from '../Services';
+import {Component, OnInit} from '@angular/core';
+import {Animations, AuthService, UserService, GeolocationService} from '../Services';
 import {Router} from '@angular/router';
 
 /*
@@ -7,11 +7,11 @@ import {Router} from '@angular/router';
  * Top Level Component
  */
 @Component({
-  selector: 'main-content',
+  selector: 'home-content',
   template:
 `
 <page-transition [pageId]="pageId" [menuColor]="menuColor">
-  <h3>Bienvenue {{user}}</h3>
+  <h3>Bienvenue {{users.firstname}} {{users.username}}</h3>
   <span class="button expend" (click)="onLogout()">Se deconnecter</span>
  </page-transition>
 
@@ -22,21 +22,39 @@ import {Router} from '@angular/router';
   animations:Animations.page,
 })
 
-export class HomeAuth {
+export class HomeAuth implements OnInit{
+  users = {};
+  pageId = "homePrivate";
+  // menuColor= "rgb(182,0,0)";
+  menuColor= "rgb(202,202,202)";
 
   constructor(
-      private authservice : AuthService,
-      private router : Router
+      private authService : AuthService,
+      private router : Router,
+      private userService : UserService,
+      private geolocalisationService : GeolocationService,
   ){
 
   }
+  ngOnInit(){
+    this.getUsers();
+    console.log(this.users);
+  }
+
+  getUsers() {
+    this.userService.getUsers()
+        .subscribe(
+            res => this.users = res);
+            // res =>  console.log(res));
+
+    // error =>  this.errorMessage = <any>error);
+  }
+
+
 
   onLogout(){
-    this.authservice.logout();
+    this.authService.logout();
     this.router.navigate(['main-component']);
   }
-  user = "Antonin";
-  pageId = "homePrivate";
-  // menuColor= "rgb(182,0,0)";
-   menuColor= "rgb(202,202,202)";
+
 }
