@@ -10,6 +10,9 @@ import {App} from './app'
 import {providers, routes} from './index';
 import {MainComponent, RegisterComponent, NavComponent, HomeAuth,LoginComponent,addEventComponent} from './Composents';
 import {AuthPage} from "./Composents/loginRegister/authpage.component";
+import {LocationStrategy, HashLocationStrategy} from '@angular/common';
+
+
 
 
 
@@ -34,8 +37,12 @@ import {AuthPage} from "./Composents/loginRegister/authpage.component";
         App,
 
     ],
-    providers,
+    providers:[
+        providers,
+        {provide: LocationStrategy, useClass: HashLocationStrategy}
+
+    ],
     bootstrap: [App]
 })
 export class Main {}
-platformBrowserDynamic().bootstrapModule(Main);
+platformBrowserDynamic().bootstrapModule(Main, []);

@@ -1,4 +1,4 @@
-<form #authForm="ngForm" (submit)="onLogin()">
+<form #authForm="ngForm" (submit)="login()">
     <div class="row">
         <div class="columns medium-centered medium-6">
             <h2 class="text-center">{{mode}}</h2>
@@ -16,8 +16,8 @@
                     name="email"
                     required
                     pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
-                    [(ngModel)]="user.email"
-                    type="text"
+                    [(ngModel)]="user.login"
+                    type="email"
                     placeholder="Email"
                     #email = "ngModel"
             >
@@ -33,7 +33,7 @@
                     name="password"
                     required
                     [(ngModel)]="user.password"
-                    type="text"
+                    type="password"
                     placeholder="Password"
                     #password = "ngModel"
             >

@@ -31,7 +31,7 @@ export class RegisterComponent {
 
     // CLICK SUBMIT
 
-    onCreateUser(){
+   onCreateUser(){
 
         let commentOperation = this._registerService.createUser(this.user);
 
