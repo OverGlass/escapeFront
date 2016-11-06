@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Animations} from '../../Services/animation';
 
 /*
  * App Component
@@ -7,17 +8,30 @@ import {Component} from '@angular/core';
 @Component({
     selector: 'authpage',
     template: `
-  <hr>
-<ul class="menu">
-  <li [routerLink]="['login']" [routerLinkActive]="['active']"><a >Login</a></li>
-  <li [routerLink]="['register']" [routerLinkActive]="['active']"><a >Register</a></li>
+<page-transition [pageId]="pageId" [menuColor]="menuColor">
+  <div class="row">
+    <ul class="menu">
+       <li [routerLink]="['login']" [routerLinkActive]="['active']"><a >Login</a></li>
+       <li [routerLink]="['register']" [routerLinkActive]="['active']"><a >Register</a></li>
+    </ul>
+  </div>
+    
+  <div>
+    <router-outlet></router-outlet>
+   </div>
+</page-transition>
+      
 
-</ul>
-    <div>
-      <router-outlet></router-outlet>
-    </div>
 `,
+    styles: [':host { width: 100%; display: block; position: absolute; }'],
+    host: { '[@routeAnimation]': 'true' },
+    animations:Animations.page,
 })
 
+
 export class AuthPage {
+    pageId = "authPage";
+    // menuColor = "rgb(222,61,61)";
+     menuColor = "rgb(230,230,230)";
+
 }

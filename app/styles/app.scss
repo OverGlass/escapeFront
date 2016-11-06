@@ -56,3 +56,44 @@
   display: none !important;
 }
 
+body {
+  width:100vw;
+  min-height:100vh;
+  overflow: hidden;
+  position: relative;
+}
+.bigPage {
+  width: 300vw;
+  height: 300vh;
+  position: absolute;
+  margin: 0 0 0 -100vw;
+  //top:-50vh;
+  left: 25vw;
+  #triMenu {
+    position:absolute;
+    bottom: 0;
+    right:0;
+    width:800vh;
+    height:800vh;
+    pointer-events: none;
+  }
+
+
+}
+
+.vpPage {
+  width:100vw;
+  min-height:100vh;
+position: absolute;
+  margin:auto;
+  //top: 25%;
+  left: 25%;
+}
+
+#homePublic.bigPage {
+  background-color: $light-gray;
+}
+
+#authPage.bigPage {
+  background-color: $medium-gray;
+}
