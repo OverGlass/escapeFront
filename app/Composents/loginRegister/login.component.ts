@@ -36,7 +36,7 @@ export class LoginComponent {
         this.authService.login(this.user)
             .subscribe(res => {
                 if (res) {
-                    this.router.navigate(['']);
+                    this.router.navigate(['loginIn']);
                 } else {
                     console.log(this.error = 'Username or password is incorrect');
                     console.log(JSON.stringify(this.user));
