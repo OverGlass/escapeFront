@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { CanActivate, Router} from '@angular/router';
+import {Login} from "./TypeChecking/login";
 
 @Injectable()
 export class AuthService implements CanActivate{
@@ -35,7 +36,7 @@ export class AuthService implements CanActivate{
         }
     }
 
-    login(UserData) {
+    login(UserData: Login) {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
