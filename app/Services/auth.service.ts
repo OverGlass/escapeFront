@@ -64,6 +64,7 @@ export class AuthService implements CanActivate{
 
     logout() {
         localStorage.removeItem('currentUser');
+        //wallah
         localStorage.removeItem('id');
         this.loggedIn = false;
     }
