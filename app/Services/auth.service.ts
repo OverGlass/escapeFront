@@ -13,7 +13,7 @@ export class AuthService implements CanActivate{
         private http: Http,
         private router: Router
     ) {
-        this.loggedIn = !!localStorage.getItem('auth_token');
+        this.loggedIn = !!localStorage.getItem('currentUser');
 
     }
 
@@ -49,8 +49,10 @@ export class AuthService implements CanActivate{
             .map(res => res.json())
             .map((res) => {
                 if (res.token) {
-                    localStorage.setItem('auth_token', res.token);
-                    console.log(res.token);
+                    // localStorage.setItem('auth_token', res.token);
+                    localStorage.setItem('id', res.id);
+                    localStorage.setItem('currentUser', res.token );
+                    // console.log(res.token);
                     this.loggedIn = true;
                     return true;
                 } else {
@@ -61,7 +63,7 @@ export class AuthService implements CanActivate{
     }
 
     logout() {
-        localStorage.removeItem('auth_token');
+        localStorage.removeItem('currentUser');
         this.loggedIn = false;
     }
 
