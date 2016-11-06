@@ -1,13 +1,38 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
+import { CanActivate, Router} from '@angular/router';
 
 @Injectable()
-export class AuthService {
+export class AuthService implements CanActivate{
+
     private loggedIn = false;
     private _url = "http://localhost/escape/web/app_dev.php/login";
-    constructor(private http: Http) {
+
+
+    constructor(
+        private http: Http,
+        private router: Router
+    ) {
         this.loggedIn = !!localStorage.getItem('auth_token');
 
+    }
+
+    // Si pas login restriction accées au pages
+
+    isAuthorized() {
+        return this.loggedIn;
+    }
+
+    canActivate(){
+        const canActivate = this.isAuthorized();
+        this.onCanActivate(canActivate);
+        return canActivate;
+    }
+
+    onCanActivate(canActivate){
+        if (!canActivate){
+            this.router.navigate(['auth']);
+        }
     }
 
     login(UserData) {
@@ -25,8 +50,8 @@ export class AuthService {
             .map((res) => {
                 if (res.token) {
                     localStorage.setItem('auth_token', res.token);
+                    console.log(res.token);
                     this.loggedIn = true;
-                    // return console.log(this.loggedIn);
                     return true;
                 } else {
                     return false;

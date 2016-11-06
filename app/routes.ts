@@ -1,12 +1,12 @@
 import  { RouterModule } from '@angular/router';
 import { ModuleWithProviders} from '@angular/core';
 import {MainComponent, RegisterComponent, HomeAuth, LoginComponent, AuthPage} from './Composents';
-import { LoggedInGuard } from './Services/login-in.guard';
+import { AuthService } from './Services';
 
 export const routes: ModuleWithProviders = RouterModule.forRoot([
 
-    {path: '', redirectTo: 'main-component', pathMatch: 'full' },
-    {path: 'loginIn', component: HomeAuth, canActivate:[LoggedInGuard]},
+    {path: '', redirectTo: 'loginIn', pathMatch: 'full' },
+    {path: 'loginIn', component: HomeAuth, canActivate:[AuthService]},
     {path: 'main-component', component: MainComponent},
     {
         path: 'auth',
