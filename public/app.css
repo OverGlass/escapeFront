@@ -5,7 +5,8 @@
  * Licensed under MIT Open Source
  */
 .logo {
-  height: 80px; }
+  height: 80px;
+  display: inline-block; }
 
 @media screen and (min-width: 640px) {
   .logo {
@@ -24,7 +25,7 @@
 .row {
   padding: 0 4%; }
   .row .main {
-    background-color: #dd4444;
+    background-color: #de3d3d;
     font-weight: bold;
     padding: 0; }
     .row .main h1 {
@@ -35,6 +36,8 @@
       margin-top: 10px;
       margin-bottom: 20px;
       display: inline-block; }
+    .row .main h2 {
+      color: white; }
     .row .main .barre {
       box-sizing: border-box;
       display: inline-block;
@@ -73,6 +76,14 @@
       color: #ddcccc;
       font-size: 80px;
       border: none; }
+    .row .main .error {
+      background-color: #b60000;
+      border: 5px solid #dd8888;
+      color: #ddcccc;
+      width: 100%;
+      padding: 10px;
+      margin-top: -10px;
+      margin-bottom: 20px; }
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
@@ -449,7 +460,7 @@ body {
   font-weight: normal;
   line-height: 1.5;
   color: #0a0a0a;
-  background: #dd2222;
+  background: #b60000;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
@@ -1836,7 +1847,7 @@ legend {
   padding: 1.25rem;
   margin: 1.125rem 0; }
   .fieldset legend {
-    background: #dd2222;
+    background: #b60000;
     padding: 0 0.1875rem;
     margin: 0;
     margin-left: -0.1875rem; }
@@ -1962,7 +1973,7 @@ select {
     margin-left: 1rem; }
   .menu .active > a {
     color: #fefefe;
-    background: #dd4444; }
+    background: #de3d3d; }
 
 .menu-text {
   font-weight: bold;
@@ -2054,7 +2065,7 @@ select {
     clear: both; }
   .top-bar,
   .top-bar ul {
-    background-color: #dd2222; }
+    background-color: #b60000; }
   .top-bar input {
     max-width: 200px;
     margin-right: 1rem; }
@@ -2543,7 +2554,8 @@ select {
 
 
 .logo {
-  height: 80px; }
+  height: 80px;
+  display: inline-block; }
 
 @media screen and (min-width: 640px) {
   .logo {
@@ -2562,7 +2574,7 @@ select {
 .row {
   padding: 0 4%; }
   .row .main {
-    background-color: #dd4444;
+    background-color: #de3d3d;
     font-weight: bold;
     padding: 0; }
     .row .main h1 {
@@ -2573,6 +2585,8 @@ select {
       margin-top: 10px;
       margin-bottom: 20px;
       display: inline-block; }
+    .row .main h2 {
+      color: white; }
     .row .main .barre {
       box-sizing: border-box;
       display: inline-block;
@@ -2611,6 +2625,14 @@ select {
       color: #ddcccc;
       font-size: 80px;
       border: none; }
+    .row .main .error {
+      background-color: #b60000;
+      border: 5px solid #dd8888;
+      color: #ddcccc;
+      width: 100%;
+      padding: 10px;
+      margin-top: -10px;
+      margin-bottom: 20px; }
 
 
 /*# sourceMappingURL=app.css.map*/

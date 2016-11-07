@@ -1,7 +1,7 @@
 // Mes variables
 
-$bg-site: #dd2222;
-$bg-onglet : #dd4444;
+$bg-site: #b60000;
+$bg-onglet : #de3d3d;
 $bg-block-fonce : #dd6666;
 $bg-block-clair : #dd8888;
 $text-fonce : #ddaaaa;
@@ -9,6 +9,7 @@ $text-clair : #ddcccc;
 
 .logo{
   height:80px;
+  display: inline-block;
 }
 
 @media screen and (min-width: 640px){
@@ -50,6 +51,9 @@ $text-clair : #ddcccc;
       margin-top: 10px;
       margin-bottom: 20px;
       display: inline-block;
+    }
+    h2{
+      color: white;
     }
     .barre{
       box-sizing: border-box;
@@ -93,6 +97,15 @@ $text-clair : #ddcccc;
       color: $text-clair;;
       font-size: 80px;
       border: none;
+    }
+    .error{
+      background-color: $bg-site;
+      border: 5px solid $bg-block-clair;
+      color: $text-clair;
+      width: 100%;
+      padding: 10px;
+      margin-top: -10px;
+      margin-bottom: 20px;
     }
   }
 }
