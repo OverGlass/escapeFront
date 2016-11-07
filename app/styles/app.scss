@@ -92,6 +92,11 @@ body {
       width:650vw;
       height:650vw;
     }
+    .triangleSvg {
+      pointer-events: fill;
+      cursor: pointer;
+    }
+
   }
 
 
@@ -104,6 +109,19 @@ body {
   margin:auto;
   //top: 25%;
   left: 25%;
+
+  .rotate {
+    position: absolute;
+    //display: block;
+    //width:2vw;
+    //height:5vh;
+    bottom: 8vh;
+    right:3vh;
+    transform: rotate(-45deg);
+    z-index: 10000;
+    font-size:2em;
+    text-align: center;
+  }
 }
 
 #homePublic.bigPage {
