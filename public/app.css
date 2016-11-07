@@ -19,54 +19,54 @@
 
 .main {
   background-color: #dd4444;
-  margin: 0 4%; }
+  margin: 0 4%;
+  min-height: 500px;
+  font-weight: bold; }
   .main .row h1 {
     color: #ddaaaa;
     font-weight: bold;
     margin-left: 5px;
     margin-right: 5px;
     margin-top: 10px;
+    margin-bottom: 20px;
     display: inline-block; }
   .main .row .barre {
     box-sizing: border-box;
     display: inline-block;
     border: 1px solid #ddaaaa;
-    width: 50%; }
+    width: 60%; }
   .main .row p {
     color: white; }
-  .main .row .row {
-    margin: 10px;
-    font-weight: bold; }
-    .main .row .row .facebook-register {
-      background-color: #dd8888;
-      text-align: center;
-      height: 60px;
-      padding-top: 20px;
-      text-transform: uppercase;
-      margin-bottom: 10px; }
-    .main .row .row input {
-      background-color: #dd6666;
-      width: 100%;
-      height: 60px;
-      margin-bottom: 20px; }
-    .main .row .row ::-webkit-input-placeholder {
-      /* Chrome/Opera/Safari */
-      color: #ddaaaa; }
-    .main .row .row ::-moz-placeholder {
-      /* Firefox 19+ */
-      color: #ddaaaa; }
-    .main .row .row :-ms-input-placeholder {
-      /* IE 10+ */
-      color: #ddaaaa; }
-    .main .row .row :-moz-placeholder {
-      /* Firefox 18- */
-      color: #ddaaaa; }
-    .main .row .row .envoi {
-      height: 180px;
-      background-color: #dd8888;
-      color: #ddcccc;
-      font-size: 80px;
-      border: none; }
+  .main .row .facebook-register {
+    background-color: #dd8888;
+    text-align: center;
+    height: 60px;
+    padding-top: 20px;
+    text-transform: uppercase;
+    margin-bottom: 20px; }
+  .main .row input {
+    background-color: #dd6666;
+    width: 100%;
+    height: 60px;
+    margin-bottom: 20px; }
+  .main .row ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #ddaaaa; }
+  .main .row ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #ddaaaa; }
+  .main .row :-ms-input-placeholder {
+    /* IE 10+ */
+    color: #ddaaaa; }
+  .main .row :-moz-placeholder {
+    /* Firefox 18- */
+    color: #ddaaaa; }
+  .main .row .envoi {
+    height: 180px;
+    background-color: #dd8888;
+    color: #ddcccc;
+    font-size: 80px;
+    border: none; }
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
@@ -504,8 +504,8 @@ button {
     padding-left: 0;
     padding-right: 0; }
   .row .row {
-    margin-left: -0.3125rem;
-    margin-right: -0.3125rem; }
+    margin-left: -0.625rem;
+    margin-right: -0.625rem; }
     @media screen and (min-width: 40em) {
       .row .row {
         margin-left: -0.9375rem;
@@ -522,8 +522,8 @@ button {
 .column, .columns {
   width: 100%;
   float: left;
-  padding-left: 0.3125rem;
-  padding-right: 0.3125rem; }
+  padding-left: 0.625rem;
+  padding-right: 0.625rem; }
   @media screen and (min-width: 40em) {
     .column, .columns {
       padding-left: 0.9375rem;
@@ -795,8 +795,8 @@ button {
   margin-right: 0; }
 
 .small-uncollapse > .column, .small-uncollapse > .columns {
-  padding-left: 0.3125rem;
-  padding-right: 0.3125rem; }
+  padding-left: 0.625rem;
+  padding-right: 0.625rem; }
 
 .small-centered {
   margin-left: auto;
@@ -2551,54 +2551,54 @@ select {
 
 .main {
   background-color: #dd4444;
-  margin: 0 4%; }
+  margin: 0 4%;
+  min-height: 500px;
+  font-weight: bold; }
   .main .row h1 {
     color: #ddaaaa;
     font-weight: bold;
     margin-left: 5px;
     margin-right: 5px;
     margin-top: 10px;
+    margin-bottom: 20px;
     display: inline-block; }
   .main .row .barre {
     box-sizing: border-box;
     display: inline-block;
     border: 1px solid #ddaaaa;
-    width: 50%; }
+    width: 60%; }
   .main .row p {
     color: white; }
-  .main .row .row {
-    margin: 10px;
-    font-weight: bold; }
-    .main .row .row .facebook-register {
-      background-color: #dd8888;
-      text-align: center;
-      height: 60px;
-      padding-top: 20px;
-      text-transform: uppercase;
-      margin-bottom: 10px; }
-    .main .row .row input {
-      background-color: #dd6666;
-      width: 100%;
-      height: 60px;
-      margin-bottom: 20px; }
-    .main .row .row ::-webkit-input-placeholder {
-      /* Chrome/Opera/Safari */
-      color: #ddaaaa; }
-    .main .row .row ::-moz-placeholder {
-      /* Firefox 19+ */
-      color: #ddaaaa; }
-    .main .row .row :-ms-input-placeholder {
-      /* IE 10+ */
-      color: #ddaaaa; }
-    .main .row .row :-moz-placeholder {
-      /* Firefox 18- */
-      color: #ddaaaa; }
-    .main .row .row .envoi {
-      height: 180px;
-      background-color: #dd8888;
-      color: #ddcccc;
-      font-size: 80px;
-      border: none; }
+  .main .row .facebook-register {
+    background-color: #dd8888;
+    text-align: center;
+    height: 60px;
+    padding-top: 20px;
+    text-transform: uppercase;
+    margin-bottom: 20px; }
+  .main .row input {
+    background-color: #dd6666;
+    width: 100%;
+    height: 60px;
+    margin-bottom: 20px; }
+  .main .row ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #ddaaaa; }
+  .main .row ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #ddaaaa; }
+  .main .row :-ms-input-placeholder {
+    /* IE 10+ */
+    color: #ddaaaa; }
+  .main .row :-moz-placeholder {
+    /* Firefox 18- */
+    color: #ddaaaa; }
+  .main .row .envoi {
+    height: 180px;
+    background-color: #dd8888;
+    color: #ddcccc;
+    font-size: 80px;
+    border: none; }
 
 
 /*# sourceMappingURL=app.css.map*/
