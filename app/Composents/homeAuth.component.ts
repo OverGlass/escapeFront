@@ -12,7 +12,7 @@ import {Router} from '@angular/router';
   selector: 'home-content',
   template:
 `
-<page-transition [pageId]="pageId" [menuColor]="menuColor">
+<page-transition [pageId]="pageId" [route]="route" [menuColor]="menuColor">
   <h3>Bienvenue {{users}} {{users.username}}</h3>
   <span class="button expend" (click)="onLogout()">Se deconnecter</span>
  </page-transition>
@@ -29,6 +29,7 @@ export class HomeAuth implements OnInit{
   pageId = "homePrivate";
   // menuColor= "rgb(182,0,0)";
   menuColor= "rgb(202,202,202)";
+  route = "/main-component";
 
   constructor(
       private authService : AuthService,

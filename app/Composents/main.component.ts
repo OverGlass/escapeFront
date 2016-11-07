@@ -9,7 +9,7 @@ import {Animations} from '../Services/animation';
   selector: 'main-content',
   template:
 `
-<page-transition [pageId]="pageId" [menuColor]="menuColor">
+<page-transition [pageId]="pageId" [route]="route" [menuName]="menuName" [menuColor]="menuColor">
   <h3>Page PUBLIC HOME</h3>
  </page-transition>
 
@@ -24,4 +24,6 @@ export class MainComponent {
   pageId = "homePublic";
   // menuColor= "rgb(182,0,0)";
    menuColor= "rgb(202,202,202)";
+  route = '/auth';
+  menuName = 'Connection <br> Inscription';
 }
