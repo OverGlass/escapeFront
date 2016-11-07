@@ -58,7 +58,7 @@
 
 body {
   width:100vw;
-  min-height:100vh;
+  height:100vh;
   overflow: hidden;
   position: relative;
 }
@@ -69,6 +69,11 @@ body {
   margin: 0 0 0 -100vw;
   //top:-50vh;
   left: 25vw;
+  @include breakpoint(medium) {
+    width: 300vw;
+    height: 250vh;
+  }
+
   #triMenu {
     position:absolute;
     bottom: 0;
@@ -76,6 +81,14 @@ body {
     width:800vh;
     height:800vh;
     pointer-events: none;
+    @include breakpoint(medium) {
+      width:750vw;
+      height:750vw;
+    }
+    @include breakpoint(large) {
+      width:650vw;
+      height:650vw;
+    }
   }
 
 
@@ -84,7 +97,7 @@ body {
 .vpPage {
   width:100vw;
   min-height:100vh;
-position: absolute;
+  position: absolute;
   margin:auto;
   //top: 25%;
   left: 25%;
