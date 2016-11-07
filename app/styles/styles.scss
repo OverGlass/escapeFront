@@ -31,7 +31,7 @@ $text-clair : #ddcccc;
 
 .main{
   background-color: $bg-onglet;
-  margin: 0 10px;
+  margin: 0 4%;
   .row {
     h1 {
       color: $text-fonce;
@@ -59,11 +59,13 @@ $text-clair : #ddcccc;
         height: 60px;
         padding-top: 20px;
         text-transform: uppercase;
+        margin-bottom: 10px;
       }
       input{
         background-color: $bg-block-fonce;
         width: 100%;
         height: 60px;
+        margin-bottom: 20px;
       }
       ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
         color: $text-fonce;

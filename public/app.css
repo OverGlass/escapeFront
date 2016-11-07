@@ -19,7 +19,7 @@
 
 .main {
   background-color: #dd4444;
-  margin: 0 10px; }
+  margin: 0 4%; }
   .main .row h1 {
     color: #ddaaaa;
     font-weight: bold;
@@ -42,11 +42,13 @@
       text-align: center;
       height: 60px;
       padding-top: 20px;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      margin-bottom: 10px; }
     .main .row .row input {
       background-color: #dd6666;
       width: 100%;
-      height: 60px; }
+      height: 60px;
+      margin-bottom: 20px; }
     .main .row .row ::-webkit-input-placeholder {
       /* Chrome/Opera/Safari */
       color: #ddaaaa; }
@@ -2549,7 +2551,7 @@ select {
 
 .main {
   background-color: #dd4444;
-  margin: 0 10px; }
+  margin: 0 4%; }
   .main .row h1 {
     color: #ddaaaa;
     font-weight: bold;
@@ -2572,11 +2574,13 @@ select {
       text-align: center;
       height: 60px;
       padding-top: 20px;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      margin-bottom: 10px; }
     .main .row .row input {
       background-color: #dd6666;
       width: 100%;
-      height: 60px; }
+      height: 60px;
+      margin-bottom: 20px; }
     .main .row .row ::-webkit-input-placeholder {
       /* Chrome/Opera/Safari */
       color: #ddaaaa; }
