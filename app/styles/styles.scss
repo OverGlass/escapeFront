@@ -11,13 +11,19 @@ $text-clair : #ddcccc;
   height:80px;
 }
 
+@media screen and (min-width: 640px){
+  .logo{
+    height: 200px;
+  }
+}
+
 .top-bar {
   position: relative;
   .top-bar-right {
     .menu {
       position: absolute;
       bottom: 0;
-      left: 100px;
+      left: 30%;
       li {
         a {
           color: white;
@@ -29,16 +35,17 @@ $text-clair : #ddcccc;
 }
 
 
-.main{
-  background-color: $bg-onglet;
-  margin: 0 4%;
-  min-height: 500px;
-  font-weight: bold;
-  .row{
+
+.row{
+  padding: 0 4%;
+  .main{
+    background-color: $bg-onglet;
+    font-weight: bold;
+    padding: 0;
     h1 {
       color: $text-fonce;
       font-weight: bold;
-      margin-left: 5px;
+      margin-left: 10px;
       margin-right: 5px;
       margin-top: 10px;
       margin-bottom: 20px;
@@ -52,6 +59,7 @@ $text-clair : #ddcccc;
     }
     p{
       color: white;
+      margin-bottom: 30px;
     }
     .facebook-register {
       background-color: $bg-block-clair;
