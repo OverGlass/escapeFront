@@ -69,10 +69,10 @@ body {
   margin: 0 0 0 -100vw;
   //top:-50vh;
   left: 25vw;
-  @include breakpoint(medium) {
-    width: 300vw;
-    height: 250vh;
-  }
+  //@include breakpoint(medium only) {
+  //  width: 300vw;
+  //  height: 250vh;
+  //}
 
   #triMenu {
     position:absolute;
@@ -81,6 +81,9 @@ body {
     width:800vh;
     height:800vh;
     pointer-events: none;
+    @media screen and (min-width: 40em) and (max-width: 63.9375em) and (max-height: 50em) {
+
+    }
     @include breakpoint(medium) {
       width:750vw;
       height:750vw;
