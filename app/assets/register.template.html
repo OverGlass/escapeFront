@@ -1,19 +1,23 @@
-<form #authForm="ngForm" (submit)="onCreateUser()">
-    <div class="row">
-        <div class="columns medium-centered medium-6">
-            <h2 class="text-center">{{mode}}</h2>
+<div class="row">
+  <div class="main small-12 large-8 large-offset-2 columns">
+    <div class="small-12 large-12 columns">
+      <h1>Register</h1>
+      <div class="barre"></div>
+      <div class="row">
+        <div class="small-12 medium-12 columns">
+          <div class="facebook-register">
+            <a href="">Via Facebook</a>
+          </div>
         </div>
-    </div>
-    <div class="row">
-        <!--USERNAME-->
-        <div class="medium-12 columns">
+        <form #authForm="ngForm" (submit)="onCreateUser()">
+          <!--USERNAME-->
+          <div class="small-12 medium-6 columns">
 
             <!--<span class="warning label"> Déjà prit :S</span>-->
             <span class="warning label" [hidden]="username.valid || username.pristine">
                 Ce champ est obligatoire !
             </span>
 
-            <label for="username">Votre nom</label>
             <input
                     id="username"
                     name="username"
@@ -25,16 +29,16 @@
             >
 
 
-        </div>
+          </div>
 
-        <div class="medium-12 columns">
+          <!--USERNAME-->
+          <div class="small-12 medium-6 columns">
 
             <!--<span class="warning label"> Déjà prit :S</span>-->
             <span class="warning label" [hidden]="username.valid || username.pristine">
                 Ce champ est obligatoire !
             </span>
 
-            <label for="firstname">Votre prénom</label>
             <input
                     id="firstname"
                     name="firstname"
@@ -46,15 +50,14 @@
             >
 
 
-        </div>
+          </div>
 
 
 
-        <!--EMAIL-->
-        <div class="medium-12 columns">
+          <!--EMAIL-->
+          <div class="small-12 medium-6 columns">
 
             <span class="warning label" [hidden]="email.valid || email.pristine"> Un email valide est requis !</span>
-            <label for="email">Votre email </label>
             <input
                     id="email"
                     name="email"
@@ -65,13 +68,12 @@
                     placeholder="Email"
                     #email = "ngModel"
             >
-        </div>
+          </div>
 
-        <!--PASSWORD-->
-        <div class="medium-12 columns">
+          <!--PASSWORD-->
+          <div class="small-12 medium-6 columns">
 
             <span class="warning label" [hidden]="password.valid || password.pristine">Le mot de passe est requis :P</span>
-            <label for="password">Votre mot de passe </label>
             <input
                     id="password"
                     name="password"
@@ -81,22 +83,24 @@
                     placeholder="Password"
                     #password = "ngModel"
             >
-        </div>
+          </div>
 
 
 
 
-    </div>
 
 
-    <!--SUBMIT-->
-    <div class="row">
-        <div class="medium-6 column medium-centered">
+          <!--SUBMIT-->
+          <div class="small-12 medium-12 columns">
             <input
                     class="button expanded"
                     type="submit"
                     [disabled]="!authForm.form.valid"
+                    class="envoi"
             >
-        </div>
+          </div>
+        </form>
+      </div>
     </div>
-</form>
+  </div>
+</div>

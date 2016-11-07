@@ -44,8 +44,8 @@
 
 // Mes variables
 
-$bg-site: #dd2222;
-$bg-onglet : #dd4444;
+$bg-onglet : transparentize(#fff,0.8);
+$bg-site: transparentize(#fff,0.5);
 $bg-block-fonce : #dd6666;
 $bg-block-clair : #dd8888;
 $text-fonce : #ddaaaa;
@@ -568,7 +568,7 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: 0 0.5rem;
-$topbar-background: $bg-site;
+$topbar-background: transparent;
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 1rem;
 $topbar-input-width: 200px;

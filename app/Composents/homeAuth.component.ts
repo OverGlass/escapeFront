@@ -27,8 +27,8 @@ import {Router} from '@angular/router';
 export class HomeAuth implements OnInit{
   users={};
   pageId = "homePrivate";
-  // menuColor= "rgb(182,0,0)";
-  menuColor= "rgb(202,202,202)";
+  menuColor= "rgb(182,0,0)";
+  // menuColor= "rgb(202,202,202)";
   route = "/main-component";
 
   constructor(

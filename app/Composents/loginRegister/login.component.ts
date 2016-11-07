@@ -21,16 +21,7 @@ export class LoginComponent {
         password:'',
     };
 
-    // onLogin() {
-    //     this.userService.login(this.user).subscribe(
-    //         (result) => {
-    //             if (result) {
-    //              this.router.navigate(['']);
-    //             }
-    //          });
-    //     console.log(JSON.stringify(this.user));
-    //
-    // }
+
     login() {
         // this.loading = true;
         this.authService.login(this.user)

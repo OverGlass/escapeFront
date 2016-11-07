@@ -3,6 +3,7 @@ import {NgForm, FormBuilder, Validators, FormControl} from '@angular/forms';
 import {Http} from "@angular/http";
 import {Observable} from 'rxjs/Rx';
 import {RegisterService} from "../../Services";
+import {Router} from "@angular/router"
 
 
 @Component({
@@ -13,9 +14,10 @@ import {RegisterService} from "../../Services";
 
 export class RegisterComponent {
 
-    constructor(private _registerService : RegisterService){
-
-    }
+    constructor(
+        private _registerService : RegisterService,
+        private router : Router,
+    ){}
 
 
     // INPUT FORMULAIRE
@@ -33,16 +35,13 @@ export class RegisterComponent {
 
    onCreateUser(){
 
-        let commentOperation = this._registerService.createUser(this.user);
-
-        commentOperation.subscribe(
-            err => {
-                // Log errors if any
-                console.log(err);
+        this._registerService.createUser(this.user)
+            .subscribe(
+            res => {
+                if (res) {
+                    this.router.navigate(['/auth/login']);
+                }
             });
-
-        console.log(JSON.stringify(this.user));
-        this.resetForm();
     };
 
 

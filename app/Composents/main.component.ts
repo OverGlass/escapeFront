@@ -22,8 +22,8 @@ import {Animations} from '../Services/animation';
 
 export class MainComponent {
   pageId = "homePublic";
-  // menuColor= "rgb(182,0,0)";
-   menuColor= "rgb(202,202,202)";
+  menuColor= "rgb(182,0,0)";
+  //  menuColor= "rgb(202,202,202)";
   route = '/auth';
   menuName = 'Connection <br> Inscription';
 }

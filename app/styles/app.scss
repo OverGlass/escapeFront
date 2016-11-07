@@ -53,6 +53,9 @@
 
 //FIX HIDDEN ANGULAR
 
+$bgBold : #B60000;
+$bgClair: #DE3D3D;
+
 [hidden] {
   display: none !important;
 }
@@ -120,16 +123,21 @@ body {
     right:3vh;
     transform: rotate(-45deg);
     z-index: 10000;
-    font-size:2em;
+    font-size:3em;
+    text-transform: uppercase;
+    font-weight:bold;
+    color: #fff;
     text-align: center;
+    pointer-events: none;
+    
   }
 }
 
 #homePublic.bigPage {
-  background-color: $bg-site;
+  background-color: $bgClair;
 }
 
 #authPage.bigPage {
-  background-color: $bg-site;
+  background-color: $bgBold;
 }
 
