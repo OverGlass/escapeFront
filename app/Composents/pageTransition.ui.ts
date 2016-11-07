@@ -8,7 +8,12 @@ import {Router} from "@angular/router";
 `
 <section id="{{pageId}}" class="bigPage">
   <div class="vpPage">
-    <header><h1>Escape</h1></header> 
+      <div class="top-bar">
+        <div class="top-bar-title">
+            <img src="img/logo.png" alt="logo" class="logo">
+        </div>
+     <ng-content select=".top-bar-right"></ng-content>
+   </div>
      <!--CONTENT-->
 
      <ng-content></ng-content>

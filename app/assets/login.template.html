@@ -1,57 +1,63 @@
-<form #authForm="ngForm" (submit)="login()">
-    <div class="row">
-        <div class="columns medium-centered medium-6">
-            <h2 class="text-center">{{mode}}</h2>
+
+<div class="row">
+    <div class="main small-12 large-8 large-offset-2 columns">
+        <div class="small-12 large-12 columns">
+            <h1>Login</h1>
+            <div class="barre"></div>
+            <div class="row">
+                <div class="small-12 medium-12 columns">
+                    <div class="facebook-register">
+                        <a href="">Via Facebook</a>
+                    </div>
+                </div>
+                <form #authForm="ngForm" (submit)="login()">
+
+                        <!--EMAIL-->
+                        <div class="small-12 medium-6 columns">
+
+                            <span class="warning label" [hidden]="email.valid || email.pristine"> Un email valide est requis !</span>
+                            <input
+                                    id="email"
+                                    name="email"
+                                    required
+                                    pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                                    [(ngModel)]="user.login"
+                                    type="email"
+                                    placeholder="Email"
+                                    #email = "ngModel"
+
+                            >
+                        </div>
+
+                        <!--PASSWORD-->
+                        <div class="small-12 medium-6 columns">
+
+                            <span class="warning label" [hidden]="password.valid || password.pristine">Le mot de passe est requis :P</span>
+                            <input
+                                    id="password"
+                                    name="password"
+                                    required
+                                    [(ngModel)]="user.password"
+                                    type="password"
+                                    placeholder="Password"
+                                    #password = "ngModel"
+                            >
+
+                    </div>
+
+
+
+                    <!--SUBMIT-->
+                        <div class="small-12 medium-12 columns">
+                            <input
+                                    class="envoi"
+                                    type="submit"
+                                    [disabled]="!authForm.form.valid"
+                            >
+                        </div>
+                </form>
+
+            </div>
         </div>
     </div>
-    <div class="row">
-
-        <!--EMAIL-->
-        <div class="medium-12 columns">
-
-            <span class="warning label" [hidden]="email.valid || email.pristine"> Un email valide est requis !</span>
-            <label for="email">Votre email </label>
-            <input
-                    id="email"
-                    name="email"
-                    required
-                    pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
-                    [(ngModel)]="user.login"
-                    type="email"
-                    placeholder="Email"
-                    #email = "ngModel"
-            >
-        </div>
-
-        <!--PASSWORD-->
-        <div class="medium-12 columns">
-
-            <span class="warning label" [hidden]="password.valid || password.pristine">Le mot de passe est requis :P</span>
-            <label for="password">Votre mot de passe </label>
-            <input
-                    id="password"
-                    name="password"
-                    required
-                    [(ngModel)]="user.password"
-                    type="password"
-                    placeholder="Password"
-                    #password = "ngModel"
-            >
-        </div>
-
-
-
-    </div>
-
-
-    <!--SUBMIT-->
-    <div class="row">
-        <div class="medium-6 column medium-centered">
-            <input
-                    class="button expanded"
-                    type="submit"
-                    [disabled]="!authForm.form.valid"
-            >
-        </div>
-    </div>
-</form>
+</div>

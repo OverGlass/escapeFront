@@ -9,12 +9,12 @@ import {Animations} from '../../Services/animation';
     selector: 'authpage',
     template: `
 <page-transition [pageId]="pageId" [route]="route" [menuName]="menuName" [menuColor]="menuColor">
-  <div class="row">
-    <ul class="menu">
+        <div class="top-bar-right">
+            <ul class="menu">
        <li [routerLink]="['login']" [routerLinkActive]="['active']"><a >Login</a></li>
        <li [routerLink]="['register']" [routerLinkActive]="['active']"><a >Register</a></li>
-    </ul>
-  </div>
+            </ul>
+        </div>
     
   <div>
     <router-outlet></router-outlet>
