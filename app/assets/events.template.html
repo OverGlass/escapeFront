@@ -20,14 +20,10 @@
 
         <!-- Events -->
 
-
-        <div *ngFor="let event of events; let i=index" class="small-12 medium-6 columns">
-          <div class="event">
-            <span>{{event.sport.nomSport}}<p>| 2km | {{event.dateTime.timestamp *1000| date}} | Par @{{event.usercreateur.username}}{{event.usercreateur.firstname}}</p></span>
-            <div class="qt-people">{{event.nbrPersonnesReserve}}</div>
-          </div>
-          <div *ngIf="canEdit" class="event"></div>
-        </div>
+        <event-tab
+                [event]="event"
+                *ngFor="let event of events"
+        ></event-tab>
 
       </div>
     </div>

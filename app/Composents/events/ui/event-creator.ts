@@ -1,9 +1,11 @@
 import {Component} from "@angular/core";
 
 
-@Component{
+@Component({
+    selector:'event-creator',
+    template:'<h3>lol</h3>'
 
-}
+})
 
 
 

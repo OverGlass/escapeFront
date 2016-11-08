@@ -25,7 +25,6 @@ export class EventsComponent implements OnInit{
     latitude = "48.40111515151";
     longitude = "3.9444515";
     distance = "10000";
-    visible: boolean=false;
 
     constructor(
         private authService : AuthService,
@@ -35,10 +34,14 @@ export class EventsComponent implements OnInit{
     ){
 
     }
+
+
     ngOnInit(){
         this.getEvents(this.latitude, this.longitude, this.distance);
         // console.log(this.users);
     }
+
+
 
     getEvents(latitude, longitude,distance) {
         this.eventService.getEvents(latitude, longitude, distance)
