@@ -19,7 +19,7 @@ export class EventService {
 
 
 
-    getUsers(latitude,longitude,distance) :Observable<Event>{
+    getEvents(latitude,longitude,distance) :Observable<Event>{
 
         return this._http.get(this._url + latitude + '/' + longitude + '/' + distance)
         // .map(this.extractData)

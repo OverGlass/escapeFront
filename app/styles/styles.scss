@@ -1,24 +1,43 @@
 // Mes variables
 
-$bg-onglet : transparentize(#fff,0.8);
-$bg-block-fonce : #dd6666;
-$bg-block-clair : #dd8888;
-$text-fonce : #ddaaaa;
-$text-clair : #ddcccc;
+$bg-site: #b60000;
+$bg-onglet : #de3d3d;
+$bg-block-fonce : transparentize(#fff, 0.7);
+$bg-block-clair : transparentize(#fff, 0.5);
+$text-fonce : transparentize(#fff, 0.3);
+$text-clair : transparentize(#fff, 0.1);
+
 
 .logo{
   height:80px;
+  display: inline-block;
 }
 
 @media screen and (min-width: 640px){
   .logo{
     height: 200px;
+    margin-left: 20px;
   }
 }
 
 .top-bar {
   position: relative;
   .top-bar-right {
+    h2{
+      color: white;
+      position: absolute;
+      left: 35%;
+      bottom: 10%;
+      font-size: 100%;
+    }
+    @media screen and (min-width: 640px){
+      h2 {
+        font-size: 200%;
+        position: absolute;
+        left: 35%;
+        bottom: 30%;
+      }
+    }
     .menu {
       position: absolute;
       bottom: 0;
@@ -36,7 +55,7 @@ $text-clair : #ddcccc;
 
 
 .row{
-  padding: 0 4%;
+  padding: 0 10px;
   .main{
     background-color: $bg-onglet;
     font-weight: bold;
@@ -49,6 +68,16 @@ $text-clair : #ddcccc;
       margin-top: 10px;
       margin-bottom: 20px;
       display: inline-block;
+    }
+    h3{
+      color: $text-fonce;
+      font-weight: bold;
+      margin-left: 10px;
+      margin-right: 5px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      display: inline-block;
+      font-size: 150%;
     }
     .barre{
       box-sizing: border-box;
@@ -66,13 +95,63 @@ $text-clair : #ddcccc;
       height: 60px;
       padding-top: 20px;
       text-transform: uppercase;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
+      a{
+        height: 100%;
+        width: 100%;
+        display: block;
+        color: $bg-site;
+      }
+    }
+    .ajout-event{
+      background-color: $bg-block-clair;
+      height: 60px;
+      padding-top: 20px;
+      margin-bottom: 10px;
+      padding-left : 10px;
+      a{
+        color: $bg-site;
+        height: 100%;
+        width: 100%;
+        display: block;
+      }
+    }
+    .event{
+      background-color: $bg-site;
+      height: 60px;
+      padding-left: 10px;
+      margin-bottom: 10px;
+      a{
+        color: $text-clair;
+        height: 100%;
+        width: 80%;
+        display: inline-block;
+        padding-top: 3px;
+        font-size: 20px;
+        p{
+          color: $text-clair;
+          font-size: 12px;
+          font-weight: normal;
+        }
+      }
+      .qt-people{
+        width: 20%;
+        float: right;
+        height: 100%;
+        background-color: $bg-block-clair;
+        padding-top : 18px;
+        padding-left: 10px;
+        color: white;
+        .icon-qt-people{
+          height: 30px;
+        }
+      }
     }
     input{
       background-color: $bg-block-fonce;
       width: 100%;
       height: 60px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
     ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
       color: $text-fonce;
@@ -92,6 +171,15 @@ $text-clair : #ddcccc;
       color: $text-clair;;
       font-size: 80px;
       border: none;
+    }
+    .error{
+      background-color: $bg-site;
+      border: 5px solid $bg-block-clair;
+      color: $text-clair;
+      width: 100%;
+      padding: 10px;
+      margin-top: -10px;
+      margin-bottom: 20px;
     }
   }
 }

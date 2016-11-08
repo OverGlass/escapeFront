@@ -44,18 +44,18 @@
 
 // Mes variables
 
-$bg-onglet : transparentize(#fff,0.8);
-$bg-site: transparentize(#fff,0.5);
-$bg-block-fonce : #dd6666;
-$bg-block-clair : #dd8888;
-$text-fonce : #ddaaaa;
-$text-clair : #ddcccc;
+$bg-site: #b60000;
+$bg-onglet : #de3d3d;
+$bg-block-fonce : transparentize(#fff, 0.7);
+$bg-block-clair : transparentize(#fff, 0.5);
+$text-fonce : transparentize(#fff, 0.3);
+$text-clair : transparentize(#fff, 0.1);
 
 // 1. Global
 // ---------
 
 $global-font-size: 100%;
-$global-width: rem-calc(1200);
+$global-width: 100%;
 $global-lineheight: 1.5;
 $foundation-palette: (
   primary: #2199e8,
@@ -103,7 +103,7 @@ $grid-row-width: $global-width;
 $grid-column-count: 12;
 $grid-column-gutter: (
   small: 10px,
-  medium: 30px,
+  medium: 10px,
 );
 $grid-column-align-edge: true;
 $block-grid-max: 8;

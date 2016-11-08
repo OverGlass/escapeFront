@@ -6,4 +6,4 @@ export {AuthPage} from "./loginRegister/authpage.component";
 export {pageTransition} from './pageTransition.ui'
 // LOGIN TRUE
 export {HomeAuth} from "./homeAuth.component";
-export {addEventComponent} from './addEvent/addEvent.component';
+export {EventsComponent} from './events/eventsComponent';
