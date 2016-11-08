@@ -20,29 +20,15 @@
 
         <!-- Events -->
 
-        <div class="small-12 medium-6 columns">
+
+        <div *ngFor="let event of events; let i=index" class="small-12 medium-6 columns">
           <div class="event">
-            <a href="">Beer pong<p>| 2km | 30/11 | 18h | Par @tanguycrepy</p></a>
-            <div class="qt-people">10</div>
+            <span>{{event.sport.nomSport}}<p>| 2km | {{event.dateTime.timestamp *1000| date}} | Par @{{event.usercreateur.username}}{{event.usercreateur.firstname}}</p></span>
+            <div class="qt-people">{{event.nbrPersonnesReserve}}</div>
           </div>
+          <div *ngIf="canEdit" class="event"></div>
         </div>
-        <div class="small-12 medium-6 columns">
-          <div class="event">
-            <a href="">Jokari<p>| 2km | 30/11 | 18h | Par @tanguycrepy</p></a>
-            <div class="qt-people">10</div>
-          </div>
-        </div>
-        <div class="small-12 medium-6 columns">
-          <div class="event">
-            <a href="">Bowling sur gazon<p>| 2km | 30/11 | 18h | Par @tanguycrepy</p></a>
-            <div class="qt-people">10</div>
-          </div>
-        </div>
-        <div class="small-12 medium-6 columns">
-          <div class="event"><a href="">Pelote basque<p>| 2km | 30/11 | 18h | Par @tanguycrepy</p></a>
-            <div class="qt-people">10</div>
-          </div>
-        </div>
+
       </div>
     </div>
   </div>

@@ -13,7 +13,7 @@ import {Router} from '@angular/router';
   template:
 `
 <page-transition [pageId]="pageId" [route]="route" [menuColor]="menuColor">
-  <h3>Bienvenue {{users}} {{users.username}}</h3>
+  <h3>Bienvenue {{users.firstname}} {{users.username}}</h3>
   <span class="button expend" (click)="onLogout()">Se deconnecter</span>
  </page-transition>
 

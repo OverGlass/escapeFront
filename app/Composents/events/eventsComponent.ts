@@ -17,16 +17,16 @@ import {Router} from '@angular/router';
 })
 
 export class EventsComponent implements OnInit{
-    events={
-
-    };
+    events;
     pageId = "eventsPrivate";
     menuColor= "rgb(182,0,0)";
     // menuColor= "rgb(202,202,202)";
     route = "/main-component";
     latitude = "48.40111515151";
     longitude = "3.9444515";
-    distance = "20";
+    distance = "10000";
+    visible: boolean=false;
+
     constructor(
         private authService : AuthService,
         private router : Router,
@@ -51,9 +51,9 @@ export class EventsComponent implements OnInit{
 
 
 
-    onLogout(){
-        this.authService.logout();
-        this.router.navigate(['main-component']);
-    }
+
+
+
+
 
 }

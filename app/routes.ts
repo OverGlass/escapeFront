@@ -2,11 +2,13 @@ import  { RouterModule } from '@angular/router';
 import { ModuleWithProviders} from '@angular/core';
 import {MainComponent, RegisterComponent, HomeAuth, LoginComponent, AuthPage} from './Composents';
 import { AuthService } from './Services';
+import {EventsComponent} from "./Composents/events/eventsComponent";
 
 export const routes: ModuleWithProviders = RouterModule.forRoot([
 
     {path: '', redirectTo: 'loginIn', pathMatch: 'full' },
     {path: 'loginIn', component: HomeAuth, canActivate:[AuthService]},
+    {path: 'events', component: EventsComponent},
     {path: 'main-component', component: MainComponent},
     {
         path: 'auth',

@@ -7,3 +7,5 @@ export {pageTransition} from './pageTransition.ui'
 // LOGIN TRUE
 export {HomeAuth} from "./homeAuth.component";
 export {EventsComponent} from './events/eventsComponent';
+export {EventCreator} from './events/ui/event-creator';
+export {EventTab} from './events/ui/event-tab';
