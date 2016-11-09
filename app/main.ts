@@ -12,6 +12,9 @@ import {MainComponent, RegisterComponent, pageTransition, HomeAuth,LoginComponen
 import {AuthPage} from "./Composents/loginRegister/authpage.component";
 import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 import {EventTab} from "./Composents/events/ui/event-tab";
+import {EventMap} from "./Composents/events/ui/event-map";
+
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
 
 
@@ -26,6 +29,11 @@ import {EventTab} from "./Composents/events/ui/event-tab";
         // routing,
         HttpModule,
         routes,
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyB8VaTW0r1Fmz2RoKuqKCcZkPO9jacDTDo'
+        })
+
+
     ],
     declarations: [
         MainComponent,
@@ -36,7 +44,8 @@ import {EventTab} from "./Composents/events/ui/event-tab";
         App,
         pageTransition,
         EventsComponent,
-        EventTab
+        EventTab,
+        EventMap
 
 
     ],

@@ -19,9 +19,11 @@ import {Router} from '@angular/router';
 export class EventsComponent implements OnInit{
     events;
     pageId = "eventsPrivate";
-    menuColor= "rgb(182,0,0)";
-    // menuColor= "rgb(202,202,202)";
+    // menuColor= "rgb(182,0,0)";
+    menuColor= "rgb(202,202,202)";
     route = "/main-component";
+    // eventLat=this.events;
+    // eventLng=this.events;
     latitude = "48.40111515151";
     longitude = "3.9444515";
     distance = "10000";
@@ -38,7 +40,8 @@ export class EventsComponent implements OnInit{
 
     ngOnInit(){
         this.getEvents(this.latitude, this.longitude, this.distance);
-        // console.log(this.users);
+
+
     }
 
 
@@ -47,7 +50,7 @@ export class EventsComponent implements OnInit{
         this.eventService.getEvents(latitude, longitude, distance)
             .subscribe(
                 res => this.events = res);
-        // res =>  console.log(res));
+                // res =>  console.log(res));
 
         // error =>  this.errorMessage = <any>error);
     }

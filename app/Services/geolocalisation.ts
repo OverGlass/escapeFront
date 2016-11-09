@@ -24,12 +24,12 @@ export class GeolocationService {
      *                 If maximumAge is Infinity, any cached position is used, regardless of its age, and watchPosition only tries to obtain an updated position if no cached position data exists.
      * @returns {Observable} An observable sequence with the geographical location of the device running the client.
      */
-    public getLocation(opts): Observable<any> {
+    public getLocation(): Observable<any> {
 
         return Observable.create(observer => {
 
-            if (window.navigator && window.navigator.geolocation) {
-                window.navigator.geolocation.getCurrentPosition(
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
                     (position) => {
                         observer.next(position);
                         observer.complete();
@@ -46,8 +46,7 @@ export class GeolocationService {
                                 observer.error(GEOLOCATION_ERRORS['errors.location.timeout']);
                                 break;
                         }
-                    },
-                    opts);
+                    },);
             }
             else {
                 observer.error(GEOLOCATION_ERRORS['errors.location.unsupportedBrowser']);

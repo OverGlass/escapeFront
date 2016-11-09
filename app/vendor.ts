@@ -14,6 +14,9 @@ import '@angular/http';
 import '@angular/router';
 import {enableProdMode} from '@angular/core';
 
+// Google Maps
+import 'angular2-google-maps/core';
+
 // RxJS 5
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';

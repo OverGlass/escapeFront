@@ -12,6 +12,7 @@ export class EventService {
     private userID = localStorage.getItem('id');
 
     private _url = "http://localhost/escape/web/app_dev.php/eventsgeo/";
+    // private _url = "https://localhost/escape/web/app_dev.php/eventsgeo/";
     constructor(
         private _http: Http,
     ){}

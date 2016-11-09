@@ -37,6 +37,7 @@
     "@angular/router": "3.1.1",
     "@angularclass/api": "^1.2.0",
     "@types/es6-shim": "^0.31.32",
+    "angular2-google-maps": "^0.16.0",
     "auto-reload-brunch": "^2.7.1",
     "es6-promise": "^3.1.2",
     "es6-shim": "^0.35.0",
