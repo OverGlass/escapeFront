@@ -20,26 +20,49 @@ export class EventsComponent implements OnInit{
     events;
     pageId = "eventsPrivate";
     // menuColor= "rgb(182,0,0)";
-    menuColor= "rgb(202,202,202)";
+    menuColor = "rgb(222,61,61)";
+    // menuColor= "rgb(202,202,202)";
     route = "/main-component";
     // eventLat=this.events;
     // eventLng=this.events;
-    latitude = "48.40111515151";
-    longitude = "3.9444515";
-    distance = "10000";
+    coord= [];
+    latitude;
+    longitude;
+    distance = "0.5";
 
     constructor(
         private authService : AuthService,
         private router : Router,
         private eventService : EventService,
-        private geolocalisationService : GeolocationService,
+        private geo : GeolocationService,
     ){
 
     }
 
 
     ngOnInit(){
-        this.getEvents(this.latitude, this.longitude, this.distance);
+
+        this.geo.getLocation().subscribe(
+
+            // lat => {this.latitude = lat.coords.latitude},
+            lat => {
+                this.latitude = lat.coords.latitude;
+                this.longitude = lat.coords.longitude;
+                this.getEvents(this.latitude, this.longitude, this.distance);
+
+            },
+            // (lnglat) => {this.coord = (lnglat)},
+            // (res) => {console.log((res))},
+        );
+
+
+
+        // this.latitude = this.coord.coords.latitude;
+        // this.longitude = this.coord.coords.longitude;
+
+
+
+
 
 
     }

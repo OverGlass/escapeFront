@@ -1,6 +1,11 @@
 import {Component, Input} from "@angular/core";
 @Component({
     selector:'event-tab',
+    styles: [`
+    .sebm-google-map-container {
+       height: 300px;
+     }
+  `],
     template:
     `
         <div class="small-12 medium-6 columns">
@@ -10,12 +15,13 @@ import {Component, Input} from "@angular/core";
           </div>
           <div [hidden]="!showEvent" class="event-deroule">
             <hr/>
-            <p>{{event.villeLatitude}} {{event.villeLongitude}}Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci animi ducimus eaque enim eum illo iusto libero.</p>
+            <p>{{event.description}}.</p>
              <div class="go-button"><a href="">GO !</a></div>
              <ng-content></ng-content>
-          <sebm-google-map [latitude]="event.villeLatitude - 0  " [longitude]="event.villeLongitude - 0">
-  <sebm-google-map-marker [latitude]="event.villeLatitude - 0" [longitude]="event.villeLongitude - 0"></sebm-google-map-marker>
-</sebm-google-map>
+             
+          <sebm-google-map *ngIf="showEvent" [latitude]="event.villeLatitude - 0 " [zoom]="zoom" [longitude]="event.villeLongitude - 0">
+             <sebm-google-map-marker [latitude]="event.villeLatitude - 0" [longitude]="event.villeLongitude - 0"></sebm-google-map-marker>
+          </sebm-google-map>
           </div>
         </div>
 `,
@@ -24,6 +30,7 @@ import {Component, Input} from "@angular/core";
 
 export class EventTab {
     @Input() event = {};
+    zoom: number = 17;
     showEvent: boolean = false;
 
     onClick(){

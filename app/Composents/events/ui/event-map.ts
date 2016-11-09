@@ -22,18 +22,18 @@ export class EventMap
     //     enableHighAccuracy : false,
     //     timeout: Infinity,
     //     maximumAge :0
-    // }
-
+    // // }
+    //
     // constructor(private geo : GeolocationService) {}
     // ngOnInit(){
-
-        // this.geo.getLocation().subscribe(
-            // res => console.log(res),
-            // lat => this.lat = lat.coords.latitude,
-            // lng => this.lng = lng.coords.longitude,
-        // )
-
-
+    //
+    //     this.geo.getLocation().subscribe(
+    //         res => console.log(res),
+    //         lat => this.lat = lat.coords.latitude,
+    //         lng => this.lng = lng.coords.longitude,
+    //     )
+    //
+    //
     // }
 
 
