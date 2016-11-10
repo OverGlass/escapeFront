@@ -28,12 +28,13 @@ declare var google: any;
                               name="sport"
                               [(ngModel)]="querySearch"
                               (keyup)="filter()"
+                              (focusout)="filter2()"
                               #sport = "ngModel"
                              >
                              <div class="suggestions" *ngIf="filteredList.length > 0">
                                  <ul *ngFor="let item of filteredList" >
                               <li >
-                                 <a (click)="select(item)">{{item}}</a>
+                                 <span (click)="select(item)">{{item}}</span>
                               </li>
                 </ul>
             </div>
@@ -128,7 +129,7 @@ export class EventCreator implements OnInit{
     // -------- EVENT ----------
 
     event= {
-        sport :15,
+        sport :6969,
 
         dateTime :{
             date: {
@@ -220,6 +221,8 @@ export class EventCreator implements OnInit{
                     for (var i =0;i < this.lesSports.length; i++){
                         // this.nomsSport.push(this.lesSports[i]);
                         // console.log(this.nomsSport);
+
+
                            this.nomsSport.push(this.lesSports[i].nomSport);
                     }
                     console.log(this.nomsSport );
@@ -228,8 +231,26 @@ export class EventCreator implements OnInit{
 
         // error =>  this.errorMessage = <any>error);
     }
+    filter2() {
+        for (var i = 0; i < this.lesSports.length; i++) {
+            // this.nomsSport.push(this.lesSports[i]);
+            // console.log(this.nomsSport);
+
+            console.log(this.querySearch+'lol', this.lesSports[i].nomSport);
+
+            if (this.querySearch == this.lesSports[i].nomSport) {
+                this.event.sport = this.lesSports[i].id;
+                console.log(this.event.sport);
+            } else {
+                console.log('Mauvaise entrée');
+
+            }
+        }
+        console.log(this.event.sport);
+    }
 
     filter() {
+
         if (this.querySearch !== ""){
             this.filteredList = this.nomsSport.filter(function(el){
                 return el.toLowerCase().indexOf(this.querySearch.toLowerCase()) > -1;
@@ -241,6 +262,7 @@ export class EventCreator implements OnInit{
 
     select(item){
         this.querySearch = item;
+        this.filter2();
         this.filteredList = [];
     }
 
