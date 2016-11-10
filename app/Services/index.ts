@@ -5,3 +5,4 @@ export {Animations} from './animation';
 export {GeolocationService} from './geolocalisation';
 export {UserService} from './user.service';
 export {EventService} from './events.service';
+export {SportService} from './sports.service';

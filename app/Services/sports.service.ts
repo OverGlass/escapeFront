@@ -10,7 +10,7 @@ import 'rxjs/add/operator/catch';
 export class SportService {
     private userID = localStorage.getItem('id');
 
-    private _url = "https://localhost/escape/web/app_dev.php/api/sports/";
+    private _url = "https://localhost/escape/web/app_dev.php/api/sports";
     constructor(
         private _http: Http,
     ){}

@@ -1,6 +1,6 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit, ElementRef} from "@angular/core";
 import {MapsAPILoader } from 'angular2-google-maps/core';
-import {EventService, UserService} from '../../../Services';
+import {EventService, UserService, SportService} from '../../../Services';
 import {User} from "../../../Services/TypeChecking/user";
 
 declare var google: any;
@@ -22,15 +22,21 @@ declare var google: any;
                         
                             <input 
                               type="text" 
-                              auto-complete
-                              [source]="lesSport"
                               placeholder="Sport" 
                               class="sport"
                               id="sport"
                               name="sport"
-                              [(ngModel)]="event.sport"
+                              [(ngModel)]="querySearch"
+                              (keyup)="filter()"
                               #sport = "ngModel"
                              >
+                             <div class="suggestions" *ngIf="filteredList.length > 0">
+                                 <ul *ngFor="let item of filteredList" >
+                              <li >
+                                 <a (click)="select(item)">{{item}}</a>
+                              </li>
+                </ul>
+            </div>
 
                             <!-- Bouton fermeture -->
                             <a href=""><img src="img/close.png" alt="close" class="close-icon"></a>
@@ -93,9 +99,33 @@ declare var google: any;
 
 
 export class EventCreator implements OnInit{
+
+
+
+    // -------- SPORT ----------
+
+
+    public querySearch = "";
+
+    public lesSports = [];
+    public nomsSport=[];
+
+    public filteredList = [];
+
+    public elementRef;
+
+
+
+
+    // -------- USER ----------
+
     users = {
         id:'',
     };
+
+
+
+    // -------- EVENT ----------
 
     event= {
         sport :15,
@@ -144,14 +174,18 @@ export class EventCreator implements OnInit{
     constructor(
         private _loader : MapsAPILoader,
         private eventsService : EventService,
-        private userService : UserService
+        private userService : UserService,
+        private sportService : SportService,
+        myElement : ElementRef
     ) {
+        this.elementRef = myElement;
 
     }
 
     ngOnInit(){
         this.autocomplete();
         this.getUsers();
+        this.getSport();
     }
 
 
@@ -167,13 +201,54 @@ export class EventCreator implements OnInit{
             let autocomplete = new google.maps.places.Autocomplete(document.getElementById("address"), {});
             google.maps.event.addListener(autocomplete, 'place_changed', () => {
                  this.place = autocomplete.getPlace();
-                console.log(this.place.geometry.location.lat(), this.place.geometry.location.lng());
 
-                console.log(this.place);
+                // console.log(this.place.geometry.location.lat(), this.place.geometry.location.lng());
+                // console.log(this.place);
             });
         // });
     }
-    getUsers() {
+
+
+    // -------- SPORT ----------
+
+    getSport() {
+        this.sportService.getSports()
+            .subscribe(
+                res => {
+                    this.lesSports = res;
+                    console.log(JSON.stringify(res));
+                    for (var i =0;i < this.lesSports.length; i++){
+                        // this.nomsSport.push(this.lesSports[i]);
+                        // console.log(this.nomsSport);
+                           this.nomsSport.push(this.lesSports[i].nomSport);
+                    }
+                    console.log(this.nomsSport );
+                });
+        // res =>  console.log(res));
+
+        // error =>  this.errorMessage = <any>error);
+    }
+
+    filter() {
+        if (this.querySearch !== ""){
+            this.filteredList = this.nomsSport.filter(function(el){
+                return el.toLowerCase().indexOf(this.querySearch.toLowerCase()) > -1;
+            }.bind(this));
+        }else{
+            this.filteredList = [];
+        }
+    }
+
+    select(item){
+        this.querySearch = item;
+        this.filteredList = [];
+    }
+
+
+
+    // -------- USER ----------
+
+    getUsers(){
         this.userService.getUsers()
             .subscribe(
                 res => this.users.id = res.id);
@@ -181,6 +256,9 @@ export class EventCreator implements OnInit{
 
         // error =>  this.errorMessage = <any>error);
     }
+
+    
+    // -------- EVENT ----------
 
     newEvent(){
 
