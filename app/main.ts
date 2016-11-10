@@ -14,7 +14,7 @@ import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 import {EventTab} from "./Composents/events/ui/event-tab";
 import {EventMap} from "./Composents/events/ui/event-map";
 
-import {CalendarModule} from 'primeng/primeng';
+import { Ng2AutoCompleteModule } from 'ng2-auto-complete';
 
 import { AgmCoreModule } from 'angular2-google-maps/core';
 
@@ -48,7 +48,7 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
         EventTab,
         EventMap,
         EventCreator,
-        // CalendarModule,
+        Ng2AutoCompleteModule
 
 
     ],

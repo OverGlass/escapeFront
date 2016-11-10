@@ -22,6 +22,8 @@ declare var google: any;
                         
                             <input 
                               type="text" 
+                              auto-complete
+                              [source]="lesSport"
                               placeholder="Sport" 
                               class="sport"
                               id="sport"

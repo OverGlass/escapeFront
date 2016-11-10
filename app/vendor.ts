@@ -4,8 +4,7 @@ import 'es6-promise';
 import 'zone.js/dist/zone';
 import 'reflect-metadata';
 // DATA PICKER
-import 'primeng/primeng';
-
+import 'ng2-auto-complete';
 // Angular 2
 import '@angular/platform-browser-dynamic';
 import '@angular/platform-browser';
