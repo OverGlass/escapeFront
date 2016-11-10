@@ -6,17 +6,22 @@
           <h3>Sports diponibles autour de vous :</h3>
         </div>
 
+        <div class="small-12 medium-12 columns">
+          <input
+                type="number"
+                placeholder="Portée de recherche"
+                name="porte"
+                [(ngModel)]="distance"
+                (change)="getEventNear()"
+          >
+        </div>
+
         <!-- Recherche -->
 
         <div class="small-12 medium-6 columns"><input type="text" placeholder="Rechercher"></div>
 
         <!-- Ajout event -->
-
-        <div class="small-12 medium-6 columns">
-          <div class="ajout-event">
-            <a href="">Ajouter un événement</a>
-          </div>
-        </div>
+        <event-creator></event-creator>
 
         <!-- Events -->
 

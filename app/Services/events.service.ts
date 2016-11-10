@@ -13,6 +13,7 @@ export class EventService {
 
     // private _url = "http://api.elpacha.fr/eventgeo/";
     private _url = "https://localhost/escape/web/app_dev.php/api/eventsgeo/";
+    private _url2 = "https://localhost/escape/web/app_dev.php/api/events";
     // private _url = "https://localhost/escape/web/app_dev.php/eventsgeo/";
     constructor(
         private _http: Http,
@@ -24,6 +25,26 @@ export class EventService {
     getEvents(latitude,longitude,distance) :Observable<Event>{
 
         return this._http.get(this._url + latitude + '/' + longitude + '/' + distance)
+        // .map(this.extractData)
+            .map(
+                res => res.json()
+            )
+            .catch(this.handleError);
+    }
+
+
+    postEvent(data) :Observable<Event>{
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+
+        return this._http.post(this._url2, JSON.stringify(data), {headers})
+            .map(res => res.json());
+
+    }
+
+    getAllEvents() :Observable<Event>{
+
+        return this._http.get(this._url2)
         // .map(this.extractData)
             .map(
                 res => res.json()

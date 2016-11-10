@@ -11,7 +11,7 @@ import 'rxjs/add/operator/catch';
 export class UserService {
     private userID = localStorage.getItem('id');
 
-    private _url = "http://localhost/escape/web/app_dev.php/users/";
+    private _url = "https://localhost/escape/web/app_dev.php/api/users/";
     constructor(
         private _http: Http,
     ){}

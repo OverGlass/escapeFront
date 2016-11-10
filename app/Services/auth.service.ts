@@ -7,7 +7,7 @@ import {Login} from "./TypeChecking/login";
 export class AuthService implements CanActivate{
 
     private loggedIn = false;
-    private _url = "http://localhost/escape/web/app_dev.php/login";
+    private _url = "https://localhost/escape/web/app_dev.php/api/login";
 
 
     constructor(

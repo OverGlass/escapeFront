@@ -9,7 +9,7 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class RegisterService {
 
-    private _url = "http://localhost/escape/web/app_dev.php/register";
+    private _url = "https://localhost/escape/web/app_dev.php/api/register";
     constructor(
         private _http: Http,
     ){}

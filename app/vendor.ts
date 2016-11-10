@@ -3,6 +3,8 @@ import 'es6-shim';
 import 'es6-promise';
 import 'zone.js/dist/zone';
 import 'reflect-metadata';
+// DATA PICKER
+import 'primeng/primeng';
 
 // Angular 2
 import '@angular/platform-browser-dynamic';
@@ -23,6 +25,8 @@ import 'rxjs/add/operator/catch';
 
 import 'rxjs/add/observable/throw';
 import 'rxjs/Rx';
+
+
 
 
 const production = 'production';
