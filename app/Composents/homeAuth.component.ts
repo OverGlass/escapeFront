@@ -15,6 +15,7 @@ import {Router} from '@angular/router';
 <page-transition [pageId]="pageId" [route]="route" [menuName]="menuName" [menuColor]="menuColor">
   <h3>Bienvenue {{users.firstname}} {{users.username}}</h3>
   <span class="button expend" (click)="onLogout()">Se deconnecter</span>
+  <profil></profil>
  </page-transition>
 
 

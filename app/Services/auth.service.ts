@@ -32,7 +32,7 @@ export class AuthService implements CanActivate{
 
     onCanActivate(canActivate){
         if (!canActivate){
-            this.router.navigate(['auth']);
+            this.router.navigate(['main-component']);
         }
     }
 

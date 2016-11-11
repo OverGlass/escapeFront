@@ -240,8 +240,6 @@ export class EventCreator implements OnInit{
             // this.nomsSport.push(this.lesSports[i]);
             // console.log(this.nomsSport);
 
-            console.log(this.querySearch+'lol', this.lesSports[i].nomSport);
-
             if (this.querySearch == this.lesSports[i].nomSport) {
                 this.event.sport = this.lesSports[i].id;
                 console.log(this.event.sport);

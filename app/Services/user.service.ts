@@ -12,6 +12,9 @@ export class UserService {
     private userID = localStorage.getItem('id');
 
     private _url = "https://localhost/escape/web/app_dev.php/api/users/";
+    private _url2 = "https://localhost/escape/web/app_dev.php/api/users";
+    private _url3 = "https://localhost/escape/web/app_dev.php/api/follow";
+    private _url4 = "https://localhost/escape/web/app_dev.php/api/user_friends/";
     constructor(
         private _http: Http,
     ){}
@@ -23,6 +26,38 @@ export class UserService {
 
         return this._http.get(this._url + this.userID)
             // .map(this.extractData)
+            .map(
+                res => res.json()
+            )
+            .catch(this.handleError);
+    }
+
+    getAllUsers() :Observable<User>{
+
+        return this._http.get(this._url2)
+        // .map(this.extractData)
+            .map(
+                res => res.json()
+            )
+            .catch(this.handleError);
+    }
+
+    getFriendsUsers(){
+
+        return this._http.get(this._url4 + this.userID)
+        // .map(this.extractData)
+            .map(
+                res => res.json()
+            )
+            .catch(this.handleError);
+    }
+
+    postFriendsUsers(friends){
+        let headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
+        let options = new RequestOptions({ headers: headers }); // Create a request option
+
+        return this._http.post(this._url3, JSON.stringify(friends), options)
+        // .map(this.extractData)
             .map(
                 res => res.json()
             )
@@ -45,7 +80,6 @@ export class UserService {
             errMsg = error.message ? error.message : error.toString();
         }
         console.error(errMsg);
-        console.log(this.userID);
         return Observable.throw(errMsg);
     }
 }
