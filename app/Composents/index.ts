@@ -11,3 +11,5 @@ export {EventCreator} from './events/ui/event-creator';
 export {EventTab} from './events/ui/event-tab';
 export {EventMap} from './events/ui/event-map';
 export {Search} from './search';
+
+export {ProfilComponent} from './Profil/profil.component'

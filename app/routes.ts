@@ -6,9 +6,9 @@ import {EventsComponent} from "./Composents/events/eventsComponent";
 
 export const routes: ModuleWithProviders = RouterModule.forRoot([
 
-    {path: '', redirectTo: 'loginIn', pathMatch: 'full' },
+    {path: '', redirectTo: 'main-component', pathMatch: 'full' },
     {path: 'loginIn', component: HomeAuth, canActivate:[AuthService]},
-    {path: 'events', component: EventsComponent},
+    {path: 'events', component: EventsComponent, canActivate:[AuthService]},
     {path: 'main-component', component: MainComponent},
     {
         path: 'auth',
