@@ -46,23 +46,32 @@ ngOnInit(){
     // -------- FRIENDS ----------
 
 
+    deleteFriend(id){
+
+        var friends={
+            user: this.userID - 0,
+            idUserFriend:id,
+        };
+
+        console.log(friends);
+
+        this.userService.deleteFriendsUsers(friends)
+            .subscribe(
+                res => {
+                    // this.myfriends = res;
+                    console.log(res);
+                });
+
+
+        this.myfriends = [];
+        this.getFriendsuser();
+    }
     getFriendsuser(){
         this.userService.getFriendsUsers()
             .subscribe(
                 res => {
                     this.myfriends = res[0];
                     console.log(this.myfriends);
-                    for(var i =0; i < this.myfriends.length; i++){
-                       this.tab.push(this.myfriends[i].idUserFriend.username + ' ' + this.myfriends[i].idUserFriend.firstname);
-                       // this.tab.push(this.myfriends[0].idUserFriend.username+ ' ' + this.myfriends[0].idUserFriend.firstname);
-                       //  tab=this.myfriends[i].idUserFriend.username;
-
-                        // for(var y=0; y < tab.length; i++) {
-                        //    var tab2 =  tab[i];
-                        // }
-                    }
-                    console.log(this.tab);
-                    // console.log(tab2);
                 });
     }
 
@@ -73,6 +82,8 @@ ngOnInit(){
                     // this.myfriends = res;
                     console.log(res);
                 });
+        this.myfriends = [];
+        this.getFriendsuser();
     }
 
 
@@ -110,6 +121,7 @@ ngOnInit(){
             }
         }
     }
+
 
     filter() {
 

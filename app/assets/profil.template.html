@@ -43,7 +43,7 @@
           </div>
         </div>
         <div class="small-12 medium-12 columns" *ngIf="myfriends.length > 0">
-          <div *ngFor="let friends of tab" class="small-6 medium-4 columns"><div class="sport"><a href="">{{friends}}</a></div></div>
+          <div *ngFor="let friends of myfriends" class="small-6 medium-4 columns"><div style="padding: 5px;" class="sport">{{friends.idUserFriend.username}} {{friends.idUserFriend.firstname}} <span (click)="deleteFriend(friends.idUserFriend.id)" style=" cursor: pointer; height: 35px; width: 35px; float:right;text-align: center;">x</span></div></div>
           <!-- end sur le dernier aussi -->
           <div class="small-6 medium-4 end columns"><div class="sport"><a href=""><- Mes followers</a></div></div>
         </div>
