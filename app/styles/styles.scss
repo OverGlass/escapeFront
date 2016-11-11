@@ -122,7 +122,7 @@ $text-clair : transparentize(#fff, 0.1);
     .ajout-event-deroule{
       background-color: $bg-site;
       margin-bottom: 10px;
-      a {
+      span.close{
         float: right;
         width: 60px;
         height: 60px;

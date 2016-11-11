@@ -9,6 +9,7 @@ declare var google: any;
     selector:'event-creator',
     template:`
 
+
               <div class="small-12 medium-6 columns " (click)="onClick(); false">
                     <div class="ajout-event" >
                         <span>Ajouter un événement<img src="img/plus.png" alt="plus" class="plus"></span>
@@ -18,7 +19,7 @@ declare var google: any;
                 
                 <div class="small-12 columns" [hidden]="showEvent">
                     <div class="ajout-event-deroule">
-                        <form #eventForm="ngForm" (submit)="newEvent()">
+                        <form #eventForm="ngForm" ngForm="eventForm" (submit)="newEvent()">
                         
                             <input 
                               type="text" 
@@ -40,7 +41,7 @@ declare var google: any;
             </div>
 
                             <!-- Bouton fermeture -->
-                            <a href=""><img src="img/close.png" alt="close" class="close-icon"></a>
+                            <span class="close" (click)="reset()"><img src="img/close.png" alt="close" class="close-icon"></span>
 
                             <hr/>
                             <input 
@@ -75,6 +76,7 @@ declare var google: any;
                               placeholder="Adresse"
                               id="address"
                               name="address"
+                              [(ngModel)]="adresse"
                              >
                              
                             <hr/>
@@ -159,6 +161,8 @@ export class EventCreator implements OnInit{
         time:'',
     };
 
+    adresse;
+
 
 
 
@@ -170,7 +174,7 @@ export class EventCreator implements OnInit{
         lat:'',
         lng:'',
     };
-    showEvent: boolean = false;
+    showEvent: boolean = true;
 
     constructor(
         private _loader : MapsAPILoader,
@@ -312,6 +316,19 @@ export class EventCreator implements OnInit{
 
         this.eventsService.postEvent(this.event)
             .subscribe(res => { console.log(res)});
+
+        this.reset();
+
+        this.showEvent=true;
+
+
+    }
+
+    reset(){
+        this.event= {};
+        this.dateTime= {};
+        this.adresse=null;
+        this.querySearch=null;
     }
 
 }

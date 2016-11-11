@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Animations, AuthService, EventService, GeolocationService} from '../../Services';
 import {Router} from '@angular/router';
+import {forEach} from "@angular/router/src/utils/collection";
+import {filter} from "rxjs/operator/filter";
 // import {User} from "../Services/TypeChecking/user";
 // import {Observable} from 'rxjs/Rx';
 
@@ -17,7 +19,20 @@ import {Router} from '@angular/router';
 })
 
 export class EventsComponent implements OnInit{
+
+
+    // SEARCH
+
+    queryEvent;
+    filteredList=[];
+    nomsSport=[];
+
+
+
+
     events;
+
+    eventContent=[];
     allEvents;
     nearEvent=[];
     pageId = "eventsPrivate";
@@ -45,7 +60,45 @@ export class EventsComponent implements OnInit{
     ngOnInit(){
         this.getEventNear();
 
+
+
     }
+
+
+    search(){
+
+        // //Comparer QueryEvent à events.nomSport
+        //
+        // if (this.queryEvent !== ""){
+        //     this.filteredList = this.nomsSport.filter(function(el){
+        //         return el.toLowerCase().indexOf(this.queryEvent.toLowerCase()) > -1;
+        //     }.bind(this));
+        //
+        //     console.log(this.filteredList + 'coucou');
+        //     var onlyInA = this.events.filter(function(current){
+        //         return this.filteredList.filter(function(current_b){
+        //                 return  current.sport.nomSport == current_b
+        //                     && current_b.display == current.display
+        //             }).length == 0
+        //     });
+        //
+        //
+        // }else{
+        //     this.filteredList = [];
+        // }
+        //
+        // // this.events.map((el) => el.sport.nomSport).indexOf('blue');
+        //
+        //
+        // console.log(onlyInA + 'AHHHHHHHHHh');
+    }
+
+
+
+
+
+
+
     // getEventNear(){
     //     this.geo.getLocation().subscribe(
     //
@@ -71,6 +124,8 @@ export class EventsComponent implements OnInit{
                 this.longitude = lat.coords.longitude;
                 this.getEvents(this.latitude, this.longitude, this.distance);
 
+
+
             },
             // (lnglat) => {this.coord = (lnglat)},
             // (res) => {console.log((res))},
@@ -80,55 +135,25 @@ export class EventsComponent implements OnInit{
     getEvents(latitude, longitude,distance) {
         this.eventService.getEvents(latitude, longitude, distance)
             .subscribe(
-                res => {this.events = res; console.log(res)});
+                res => {
+                    this.events = res; console.log(res);
+                    this.eventContent = this.events;
+                    //trier les sports
+                    for (var i =0;i < this.events.length; i++){
+                        // this.nomsSport.push(this.lesSports[i]);
+                        // console.log(this.nomsSport);
+
+
+                        this.nomsSport.push(this.events[i].sport.nomSport);
+                    }
+                });
         // res =>  console.log(res));
 
         // error =>  this.errorMessage = <any>error);
     }
 
 
-    // triEvents(){
 
-    // }
-    // getAllEvents(latitude, longitude,distance){
-    //     this.eventService.getAllEvents()
-    //         .subscribe(
-    //             events => {
-    //                 this.allEvents = events;
-    //                 console.log(this.allEvents);
-    //                 console.log('HEY !!');
-    //                 var r_earth = 6378;
-    //                 var Latitude = latitude +(distance / r_earth) * (180 / Math.PI);
-    //                 var LatitudeOp = latitude +(-distance / r_earth) * (180 / Math.PI);
-    //                 var Longitude =
-    //                     longitude +(distance / r_earth) * (180 / Math.PI)
-    //                     / Math.cos(latitude * Math.PI / 180);
-    //                 var LongitudeOp =
-    //                     longitude +(-distance / r_earth) * (180 / Math.PI)
-    //                     / Math.cos(latitude * Math.PI / 180);
-    //
-    //
-    //
-    //                 for (var i=0; i < this.allEvents.length; i++){
-    //
-    //                     if(
-    //                         this.allEvents[i].villeLatitude < Latitude &&
-    //                         this.allEvents[i].villeLatitude > LatitudeOp &&
-    //                         this.allEvents[i].villeLongitude < Longitude &&
-    //                         this.allEvents[i].villeLongitude > LongitudeOp
-    //                     ){
-    //                         this.nearEvent = [];
-    //                         this.nearEvent.push(this.allEvents[i]);
-    //                         console.log(this.nearEvent);
-    //
-    //                     }
-    //
-    //
-    //                 }
-    //
-    //             });
-    //
-    // }
 
 
 

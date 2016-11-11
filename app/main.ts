@@ -8,7 +8,7 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {App} from './app'
 
 import {providers, routes} from './index';
-import {MainComponent, RegisterComponent, pageTransition, HomeAuth,LoginComponent,EventsComponent, EventCreator} from './Composents';
+import {MainComponent, RegisterComponent, pageTransition, Search, HomeAuth,LoginComponent,EventsComponent, EventCreator} from './Composents';
 import {AuthPage} from "./Composents/loginRegister/authpage.component";
 import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 import {EventTab} from "./Composents/events/ui/event-tab";
@@ -47,6 +47,7 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
         EventTab,
         EventMap,
         EventCreator,
+        Search
 
 
     ],
