@@ -13,3 +13,4 @@ export {EventMap} from './events/ui/event-map';
 export {Search} from './search';
 
 export {ProfilComponent} from './Profil/profil.component'
+export {Mail} from './loginRegister/mail.component';
