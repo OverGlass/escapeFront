@@ -19,7 +19,7 @@ import {filter} from "rxjs/operator/filter";
 })
 
 export class EventsComponent implements OnInit{
-
+menuName ='Accueil';
 
     // SEARCH
 
@@ -39,7 +39,7 @@ export class EventsComponent implements OnInit{
     // menuColor= "rgb(182,0,0)";
     menuColor = "rgb(222,61,61)";
     // menuColor= "rgb(202,202,202)";
-    route = "/main-component";
+    route = "/loginIn";
     // eventLat=this.events;
     // eventLng=this.events;
     coord= [];

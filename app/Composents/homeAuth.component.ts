@@ -12,7 +12,7 @@ import {Router} from '@angular/router';
   selector: 'home-content',
   template:
 `
-<page-transition [pageId]="pageId" [route]="route" [menuColor]="menuColor">
+<page-transition [pageId]="pageId" [route]="route" [menuName]="menuName" [menuColor]="menuColor">
   <h3>Bienvenue {{users.firstname}} {{users.username}}</h3>
   <span class="button expend" (click)="onLogout()">Se deconnecter</span>
  </page-transition>
@@ -29,7 +29,8 @@ export class HomeAuth implements OnInit{
   pageId = "homePrivate";
   menuColor= "rgb(182,0,0)";
   // menuColor= "rgb(202,202,202)";
-  route = "/main-component";
+  route = "/events";
+  menuName='Evenements';
 
   constructor(
       private authService : AuthService,
@@ -47,7 +48,9 @@ export class HomeAuth implements OnInit{
   getUsers() {
     this.userService.getUsers()
         .subscribe(
-            res => this.users = res);
+            res => {
+              this.users = res;
+            });
             // res =>  console.log(res));
 
     // error =>  this.errorMessage = <any>error);

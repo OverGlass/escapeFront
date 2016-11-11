@@ -11,7 +11,7 @@ import {Component, Input} from "@angular/core";
         <div class="small-12 medium-6 columns"  [class.medium-12]="showEvent">
           <div (click)="onClick() "class="event">
             <span>{{event.sport.nomSport}}<p>{{event.dateTime.timestamp * 1000 | date}} | Par @{{event.usercreateur.username}}{{event.usercreateur.firstname}}</p></span>
-            <div class="qt-people">{{event.nbrPersonnesReserve}} / {{event.nbrPersonnesMax}}</div>
+            <div class="qt-people">{{event.nbrPersonnesReserve}} / {{event.nbrPersonnesMax}} <img src="img/user.png" alt="personne" class="icon-qt-people"></div>
           </div>
           <div [hidden]="!showEvent" class="event-deroule">
             <hr/>

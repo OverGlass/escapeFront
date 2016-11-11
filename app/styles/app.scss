@@ -20,7 +20,7 @@
 //@include foundation-callout;
 //@include foundation-close-button;
 @include foundation-menu;
-//@include foundation-menu-icon;
+@include foundation-menu-icon;
 //@include foundation-drilldown-menu;
 //@include foundation-dropdown;
 //@include foundation-dropdown-menu;
@@ -130,7 +130,7 @@ body {
     color: #fff;
     text-align: center;
     pointer-events: none;
-    
+
   }
 }
 
@@ -142,3 +142,27 @@ body {
   background-color: $bgBold;
 }
 
+
+#eventsPrivate.bigPage {
+  background-color: $bgBold;
+}
+#homePrivate.bigPage {
+  background-color: $bgClair;
+}
+.first {
+  height:80vh;
+  overflow: scroll;
+  padding-bottom:20px;
+}
+
+.top-bar {
+  height: 10vh;
+  img {
+    height: 100%;
+    width:auto;
+  }
+}
+
+.top-bar-title {
+  height: 100%;
+}

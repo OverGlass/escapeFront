@@ -1,7 +1,7 @@
 // Mes variables
 
 $bg-site: #b60000;
-$bg-onglet :  transparentize(#fff, 0.8);
+$bg-onglet : transparentize(#fff, 0.9);
 $bg-block-fonce : transparentize(#fff, 0.7);
 $bg-block-clair : transparentize(#fff, 0.5);
 $text-fonce : transparentize(#fff, 0.3);
@@ -23,6 +23,22 @@ $text-clair : transparentize(#fff, 0.1);
 .top-bar {
   position: relative;
   .top-bar-right {
+    h1{
+      color: white;
+      position: absolute;
+      left: 70%;
+      bottom: 10%;
+      font-size: 150%;
+      font-weight: bold;
+    }
+    @media screen and (min-width: 640px){
+      h1 {
+        font-size: 300%;
+        position: absolute;
+        left: 70%;
+        bottom: 20%;
+      }
+    }
     h2{
       color: white;
       position: absolute;
@@ -60,8 +76,6 @@ $text-clair : transparentize(#fff, 0.1);
     background-color: $bg-onglet;
     font-weight: bold;
     padding: 0;
-    height:79vh;
-    overflow: scroll;
     margin-bottom: 10px;
     h1 {
       color: $text-fonce;
@@ -81,6 +95,77 @@ $text-clair : transparentize(#fff, 0.1);
       margin-bottom: 20px;
       display: inline-block;
       font-size: 150%;
+    }
+    .parametre{
+      border-top: 2px solid $bg-block-fonce;
+      margin: 0 10px;
+      clear: both;
+      h3{
+        color: $text-fonce;
+        padding-top: 5px;
+        font-size: 20px;
+        display: block;
+      }
+      .decale{
+        padding: 0 10px;
+      }
+      @media screen and (min-width:640px){
+        .decale{
+          padding-left: 10px;
+          padding-right: 6px;
+        }
+      }
+      .ajout-sport{
+        background-color: $bg-block-fonce;
+        margin-bottom: 10px;
+      }
+      .sport{
+        background-color: $bg-block-fonce;
+        margin-bottom: 10px;
+        text-align:center;
+        height: 35px;
+        color: white;
+        padding-top: 5px;
+        a{
+          color: white;
+          display: block;
+          width: 100%;
+          height:100%;
+        }
+      }
+      h4{
+        height: 60px;
+        background-color: $bg-block-fonce;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        padding-top: 15px;
+        text-align: center;
+      }
+      .profil{
+        background-color: $bg-site;
+        margin-bottom: 10px;
+        .pp{
+          float: left;
+          width: 20%;
+          margin-top :10px;
+          margin-left: 10px;
+          margin-right: 20px;
+          margin-bottom: 10px;
+        }
+        h3{
+          color: $text-fonce;
+        }
+        p{
+          border-top: 1px solid $text-fonce;
+          color: $text-fonce;
+          margin-right: 10px;
+          margin-left: 10px;
+          margin-bottom: 10px;
+          padding-top: 10px;
+          display: inline-block;
+        }
+      }
     }
     .barre{
       box-sizing: border-box;
@@ -122,15 +207,15 @@ $text-clair : transparentize(#fff, 0.1);
     .ajout-event-deroule{
       background-color: $bg-site;
       margin-bottom: 10px;
-      span.close{
+      span {
         float: right;
         width: 60px;
         height: 60px;
         background-color: $bg-block-fonce;
         text-align: center;
         .close-icon {
-          width: 30px;
-          padding-top: 15px;
+            width: 30px;
+            padding-top: 15px;
         }
       }
       input{
@@ -176,14 +261,14 @@ $text-clair : transparentize(#fff, 0.1);
         height: 80px;
         text-align: center;
         font-size : 30px;
-        a{
+
           background-color: $bg-block-fonce;
           color: white;
           height: 100%;
           width: 100%;
           display: block;
           padding-top : 18px;
-        }
+
       }
       hr{
         width : 70%;
@@ -274,9 +359,8 @@ $text-clair : transparentize(#fff, 0.1);
           }
         }
       }
-      .sebm-google-map-container{
+      .map{
         width: 100%;
-        height: 500px;
       }
     }
     input{
