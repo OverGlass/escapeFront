@@ -35,13 +35,14 @@ export class UserService {
     }
 
     deleteUsers() :Observable<User>{
+        let headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
+        let options = new RequestOptions({ headers: headers }); // Create a request option
 
-        return this._http.delete(this._url + this.userID)
+        return this._http.delete(this._url + this.userID, options)
         // .map(this.extractData)
             .map(
                 res => res.json()
             )
-            .catch(this.handleError);
     }
 
     getUsers() :Observable<User>{
@@ -54,8 +55,7 @@ export class UserService {
             .catch(this.handleError);
     }
     headUsers(userData){
-        let headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
-        let options = new RequestOptions({ headers: headers }); // Create a request option
+
 
         return this._http.head(this._url)
         // .map(this.extractData)

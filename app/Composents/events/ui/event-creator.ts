@@ -52,6 +52,7 @@ declare var google: any;
                               placeholder="Date" 
                               class="date"
                               #date = "ngModel"
+                              required
                               
                              >
                              
@@ -62,11 +63,8 @@ declare var google: any;
                               placeholder="Heure" 
                               [(ngModel)]="dateTime.time"
                               class="heure"
+                              required
                              >
-                             
-                             
-                             {{dateTime.date}} {{dateTime.time}}
-                             {{timestamp}}
                              
                             <hr/>
                             
@@ -77,6 +75,7 @@ declare var google: any;
                               id="address"
                               name="address"
                               [(ngModel)]="adresse"
+                              required
                              >
                              
                             <hr/>
@@ -89,9 +88,17 @@ declare var google: any;
                               placeholder="Description"
                               [(ngModel)]="event.description"
                                #description = "ngModel"
+                               required
                              >
                              
-                            <button class="go-button" type="submit">GO !</button>
+                            <input 
+                              [disabled]="!eventForm.form.valid"
+                              class="envoi" 
+                              type="submit"
+                              value="GO !"
+                              
+                              >
+                             
                         </form>
                     </div>
                 </div>
