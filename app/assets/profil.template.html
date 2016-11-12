@@ -39,26 +39,25 @@
         <a href=""><h3>Mot de passe</h3></a>
         <!-- Si déroulé -->
         <div class="small-12 medium-8 end decale columns">
-          <form #passForm ="ngForm" (submit)="changePass()">
+          <form (submit)="changePass()">
 
-              <input
-                      type="password"
-                      placeholder="Nouveau mot de passe "
-                      id="password"
-                      [(ngModel)]="password"
-                      #friend = "ngModel"
-              >
+            <input
+                    type="password"
+                    placeholder="Nouveau mot de passe "
+                    id="password"
+                    [(ngModel)]="password"
+                    name="password"
+                    #friend = "ngModel"
+            >
 
             <input type="submit">
 
 
           </form>
 
-          </div>
-        </div>
         </div>
       </div>
-
     </div>
   </div>
-</div>
+  </div>
+

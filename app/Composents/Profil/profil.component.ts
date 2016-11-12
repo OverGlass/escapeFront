@@ -24,6 +24,15 @@ export class ProfilComponent implements OnInit{
     myfriends=[];
     tab=[];
 
+    users;
+
+    passEmail={
+        password:null,
+        login:null,
+};
+
+    password;
+
     // -------- SPORT ----------
 
 
@@ -39,12 +48,26 @@ export class ProfilComponent implements OnInit{
 ngOnInit(){
     this.getAllUsers();
     this.getFriendsuser();
+    this.getUsers();
 
 
 }
 
     // -------- FRIENDS ----------
 
+
+
+    changePass(){
+
+        this.passEmail.login = this.users.email;
+        this.passEmail.password = this.password;
+        console.log(this.passEmail);
+        console.log(this.users);
+        this.userService.postResetPass(this.passEmail)
+            .subscribe(
+                res => {console.log(res)}
+            )
+    }
 
     deleteFriend(id){
 
@@ -86,6 +109,16 @@ ngOnInit(){
         this.getFriendsuser();
     }
 
+    getUsers() {
+        this.userService.getUsers()
+            .subscribe(
+                res => {
+                    this.users = res;
+                });
+        // res =>  console.log(res));
+
+        // error =>  this.errorMessage = <any>error);
+    }
 
     getAllUsers() {
         this.userService.getAllUsers()

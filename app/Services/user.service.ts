@@ -16,12 +16,23 @@ export class UserService {
     private _url3 = "https://localhost/escape/web/app_dev.php/api/follow";
     private _url5 = "https://localhost/escape/web/app_dev.php/api/unfollow";
     private _url4 = "https://localhost/escape/web/app_dev.php/api/user_friends/";
+    private _url6 = "https://localhost/escape/web/app_dev.php/api/reset";
     constructor(
         private _http: Http,
     ){}
 
 
+    postResetPass(passEmail){
+        let headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
+        let options = new RequestOptions({ headers: headers }); // Create a request option
 
+        return this._http.post(this._url6, JSON.stringify(passEmail), options)
+        // .map(this.extractData)
+            .map(
+                res => res.json()
+            )
+            .catch(this.handleError);
+    }
 
     getUsers() :Observable<User>{
 
