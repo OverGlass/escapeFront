@@ -36,10 +36,12 @@
       <!-- PROFIL -->
 
       <div class="parametre">
-        <a href=""><h3>Mot de passe</h3></a>
+        <a href=""><h3>Changer le mot de passe</h3></a>
         <!-- Si déroulé -->
         <div class="small-12 medium-8 end decale columns">
           <form (submit)="changePass()">
+
+            <span [hidden]="!resetComfirm" class="success label"> Mot de passe changé !</span>
 
             <input
                     type="password"

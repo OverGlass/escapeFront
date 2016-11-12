@@ -33,6 +33,8 @@ export class ProfilComponent implements OnInit{
 
     password;
 
+    resetComfirm=false;
+
     // -------- SPORT ----------
 
 
@@ -65,7 +67,14 @@ ngOnInit(){
         console.log(this.users);
         this.userService.postResetPass(this.passEmail)
             .subscribe(
-                res => {console.log(res)}
+                res => {
+                    console.log(res);
+                    if(res.Action) {
+                        this.resetComfirm = true;
+                        this.password=null;
+                        // setTimeout(this.resetComfirm=true, 10000);
+                    }
+                }
             )
     }
 
