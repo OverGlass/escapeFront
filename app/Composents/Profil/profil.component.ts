@@ -82,7 +82,7 @@ ngOnInit(){
 
 
     deleteAccount(){
-        if (confirm('Etes vous sûr de supprimer votre compte ?')){
+        if (confirm('Etes vous sûr de bien vouloir supprimer votre compte ?')){
             this.userService.deleteUsers()
                 .subscribe(
                     res => {
@@ -110,11 +110,12 @@ ngOnInit(){
                 res => {
                     // this.myfriends = res;
                     console.log(res);
+                    this.myfriends = [];
+                    this.getFriendsuser();
                 });
 
 
-        this.myfriends = [];
-        this.getFriendsuser();
+
     }
     getFriendsuser(){
         this.userService.getFriendsUsers()
@@ -131,9 +132,9 @@ ngOnInit(){
                 res => {
                     // this.myfriends = res;
                     console.log(res);
+                    this.myfriends = [];
+                    this.getFriendsuser();
                 });
-        this.myfriends = [];
-        this.getFriendsuser();
     }
 
     getUsers() {
@@ -175,10 +176,14 @@ ngOnInit(){
             if (this.querySearch == nomPrenom) {
                 this.friends.idUserFriend = this.lesSports[i].id;
                 console.log(JSON.stringify(this.friends));
+                this.filteredList = [];
+                this.querySearch = null;
             } else {
                 console.log('Mauvaise entrée');
 
             }
+
+
         }
     }
 
