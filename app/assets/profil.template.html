@@ -3,22 +3,6 @@
     <div class="small-12 medium-6 medium-offset-3 columns">
       <h1>Paramètres Utilisateur</h1>
 
-      <!-- PORTEE -->
-
-      <div class="parametre">
-        <a href=""><h3>Portée de recherche</h3></a>
-        <!-- Si déroulé -->
-        <div class="small-12 medium-12 columns">
-          <div class="small-4 medium-2 columns">
-            <h4>20 km</h4> <!-- Portée actuelle -->
-          </div>
-          <div class="small-8 medium-6 end columns">
-            <!-- Pour mofifier la portée -->
-            <input type="text" placeholder="Nouvelle portée">
-          </div>
-        </div>
-      </div>
-
       <!-- AMIS -->
 
       <div class="parametre">
@@ -52,14 +36,26 @@
       <!-- PROFIL -->
 
       <div class="parametre">
-        <a href=""><h3>Profil</h3></a>
+        <a href=""><h3>Mot de passe</h3></a>
         <!-- Si déroulé -->
-        <div class="small-12 medium-12 columns profil">
-          <img src="img/pp.jpg" alt="photo_profil" class="pp">
-          <h3>Pseudo</h3>
-          <p>Description : Lorem ipsum dolor sit amet, consectetur adipisicing elit. A earum eos error exercitationem, in ipsum, iure laboriosam quasi sapiente similique ullam unde. Atque consectetur cupiditate molestias quasi repellat sapiente vero!</p>
-          <div class="small-12 medium-12 columns"><div class="sport"><a href="">Changer de photo de profil</a></div></div>
-          <div class="small-12 medium-12 columns"><div class="sport"><a href="">Changer de description ?</a></div></div>
+        <div class="small-12 medium-8 end decale columns">
+          <form #passForm ="ngForm" (submit)="changePass()">
+
+              <input
+                      type="password"
+                      placeholder="Nouveau mot de passe "
+                      id="password"
+                      [(ngModel)]="password"
+                      #friend = "ngModel"
+              >
+
+            <input type="submit">
+
+
+          </form>
+
+          </div>
+        </div>
         </div>
       </div>
 

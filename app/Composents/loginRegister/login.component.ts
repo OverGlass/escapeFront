@@ -10,7 +10,7 @@ import {AuthService} from "../../Services";
     templateUrl: 'login.template.html'
 })
 export class LoginComponent {
-    error ='';
+    error =false;
     constructor(
         private authService: AuthService,
         private router: Router
@@ -28,8 +28,10 @@ export class LoginComponent {
             .subscribe(res => {
                 if (res) {
                     this.router.navigate(['loginIn']);
-                } else {
-                    console.log(this.error = 'Username or password is incorrect');
+                } else if(res.not == false) {
+                    console.log('coucou');
+                }else {
+                    this.error =true;
                     console.log(JSON.stringify(this.user));
 
                 }

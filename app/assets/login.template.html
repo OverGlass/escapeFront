@@ -6,9 +6,7 @@
             <div class="barre"></div>
             <div class="row">
                 <div class="small-12 medium-12 columns">
-                    <div class="facebook-register">
-                        <a href="">Via Facebook</a>
-                    </div>
+                    <span class="warning label expanded" [hidden]="!error">Email ou mot de passe invalide | Avez vous activé votre compte ?</span>
                 </div>
                 <form #authForm="ngForm" (submit)="login()">
 

@@ -18,7 +18,7 @@ export class RegisterComponent {
         private _registerService : RegisterService,
         private router : Router,
     ){}
-
+    error =false;
 
     // INPUT FORMULAIRE
 
@@ -36,10 +36,13 @@ export class RegisterComponent {
    onCreateUser(){
 
         this._registerService.createUser(this.user)
-            .subscribe(
-            res => {
+            .subscribe(res => {
                 if (res) {
                     this.router.navigate(['/mail']);
+                } else {
+                    console.log(this.error = true);
+                    console.log(JSON.stringify(this.user));
+
                 }
             });
     };

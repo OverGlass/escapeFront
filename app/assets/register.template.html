@@ -4,11 +4,6 @@
       <h1>Register</h1>
       <div class="barre"></div>
       <div class="row">
-        <div class="small-12 medium-12 columns">
-          <div class="facebook-register">
-            <a href="">Via Facebook</a>
-          </div>
-        </div>
         <form #authForm="ngForm" (submit)="onCreateUser()">
           <!--USERNAME-->
           <div class="small-12 medium-6 columns">
@@ -58,6 +53,7 @@
           <div class="small-12 medium-6 columns">
 
             <span class="warning label" [hidden]="email.valid || email.pristine"> Un email valide est requis !</span>
+            <span class="warning label" [hidden]="!error"> Cette email correspond à un compte déjà inscrit</span>
             <input
                     id="email"
                     name="email"

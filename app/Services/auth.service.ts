@@ -49,7 +49,7 @@ export class AuthService implements CanActivate{
 
             .map(res => res.json())
             .map((res) => {
-                if (res.token) {
+                if (res.token && res.validate) {
                     // localStorage.setItem('auth_token', res.token);
                     localStorage.setItem('id', res.id);
                     localStorage.setItem('currentUser', res.token );
