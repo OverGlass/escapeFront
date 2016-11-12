@@ -7,6 +7,7 @@
         </div>
 
         <div class="small-12 medium-12 columns">
+          <span [hidden]="distance >= 0" class="label warning">Veuilliez insérer un valeur positive</span>
           <input
                 type="number"
                 placeholder="Portée de recherche"
