@@ -34,6 +34,16 @@ export class UserService {
             .catch(this.handleError);
     }
 
+    deleteUsers() :Observable<User>{
+
+        return this._http.delete(this._url + this.userID)
+        // .map(this.extractData)
+            .map(
+                res => res.json()
+            )
+            .catch(this.handleError);
+    }
+
     getUsers() :Observable<User>{
 
         return this._http.get(this._url + this.userID)

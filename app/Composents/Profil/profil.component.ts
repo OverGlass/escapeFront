@@ -1,5 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {SportService, UserService} from '../../Services';
+import {Router} from "@angular/router"
 @Component({
     selector:'profil',
     templateUrl:'profil.template.html',
@@ -12,6 +13,7 @@ export class ProfilComponent implements OnInit{
     constructor(
       private sportService : SportService,
       private userService : UserService,
+      private router : Router,
 
     ){}
 
@@ -76,6 +78,22 @@ ngOnInit(){
                     }
                 }
             )
+    }
+
+
+    deleteAccount(){
+        if (confirm('Etes vous sûr de supprimer votre compte ?')){
+            this.userService.deleteUsers()
+                .subscribe(
+                    res => {
+                        // this.myfriends = res;
+                        console.log(res);
+                        this.router.navigate(['/main-component']);
+
+                    });
+        } else {
+
+        }
     }
 
     deleteFriend(id){
