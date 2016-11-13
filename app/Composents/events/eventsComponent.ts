@@ -56,6 +56,10 @@ menuName ='Accueil';
 
     }
 
+    routing(){
+        this.router.navigate([this.route]);
+    }
+
 
     ngOnInit(){
         this.getEventNear();

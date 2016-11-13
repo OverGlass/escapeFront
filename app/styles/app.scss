@@ -78,23 +78,210 @@ body {
   //  height: 250vh;
   //}
 
+
+
   #triMenu {
     position:absolute;
     bottom: 0;
     right:0;
-    width:800vh;
-    height:800vh;
+    width:1750vw;
+    height:1750vw;
     pointer-events: none;
-    @media screen and (min-width: 40em) and (max-width: 63.9375em) and (max-height: 50em) {
-
+    @media screen and (max-height: 1000px) {
+      width:1630vw;
+      height:1630vw;
     }
+    @media screen and (max-height: 900px) {
+      width:1530vw;
+      height:1530vw;
+    }
+    @media screen and (max-height: 800px) {
+    width:1330vw;
+    height:1330vw;
+  }
+    @media screen and (max-height: 700px) {
+      width:1230vw;
+      height:1230vw;
+    }
+    @media screen and (max-height: 600px) {
+      width:1030vw;
+      height:1030vw;
+    }
+    @include breakpoint(xsmall) {
+      width:1500vw;
+      height:1500vw;
+      pointer-events: none;
+      @media screen and (max-height: 1000px) {
+        width:1380vw;
+        height:1380vw;
+      }
+      @media screen and (max-height: 900px) {
+        width:1280vw;
+        height:1280vw;
+      }
+      @media screen and (max-height: 800px) {
+        width:1080vw;
+        height:1080vw;
+      }
+      @media screen and (max-height: 700px) {
+        width:980vw;
+        height:980vw;
+      }
+      @media screen and (max-height: 600px) {
+        width:780vw;
+        height:780vw;
+      }
+    }
+
+    @include breakpoint(xxsmall) {
+      width:1400vw;
+      height:1400vw;
+      pointer-events: none;
+      @media screen and (max-height: 1000px) {
+        width:1280vw;
+        height:1280vw;
+      }
+      @media screen and (max-height: 900px) {
+        width:1180vw;
+        height:1180vw;
+      }
+      @media screen and (max-height: 800px) {
+        width:980vw;
+        height:980vw;
+      }
+      @media screen and (max-height: 700px) {
+        width:880vw;
+        height:880vw;
+      }
+      @media screen and (max-height: 600px) {
+        width:680vw;
+        height:680vw;
+      }
+    }
+
+
+
     @include breakpoint(medium) {
-      width:750vw;
-      height:750vw;
+      width:1180vw;
+      height:1180vw;
+      @media screen and (max-height: 1000px) {
+        width:980vw;
+        height:980vw;
+      }
+      @media screen and (max-height: 900px) {
+        width:930vw;
+        height:930vw;
+      }
+      @media screen and (max-height: 800px) {
+        width:880vw;
+        height:880vw;
+      }
+      @media screen and (max-height: 600px) {
+        width:780vw;
+        height:780vw;
+      }
+    }
+
+    @include breakpoint(xmedium) {
+      width:1000vw;
+      height:1000vw;
+
+      @media screen and (max-height: 1000px) {
+        width:880vw;
+        height:880vw;
+      }
+      @media screen and (max-height: 900px) {
+        width:830vw;
+        height:830vw;
+      }
+      @media screen and (max-height: 800px) {
+        width:780vw;
+        height:780vw;
+      }
+      @media screen and (max-height: 600px) {
+        width:680vw;
+        height:680vw;
+      }
+    }
+
+    @include breakpoint(xxmedium) {
+
+      width:970vw;
+      height:970vw;
+
+      @media screen and (max-height: 1000px) {
+        width:880vw;
+        height:880vw;
+      }
+      @media screen and (max-height: 900px) {
+        width:830vw;
+        height:830vw;
+      }
+      @media screen and (max-height: 800px) {
+        width:780vw;
+        height:780vw;
+      }
+      @media screen and (max-height: 600px) {
+        width:680vw;
+        height:680vw;
+      }
     }
     @include breakpoint(large) {
+      width:830vw;
+      height:830vw;
+      @media screen and (max-height: 1000px) {
+        width:770vw;
+        height:770vw;
+      }
+      @media screen and (max-height: 900px) {
+        width:720vw;
+        height:720vw;
+      }
+      @media screen and (max-height: 800px) {
+        width:670vw;
+        height:670vw;
+      }
+      @media screen and (max-height: 600px) {
+        width:570vw;
+        height:570vw;
+      }
+    }
+    @include breakpoint(xlarge) {
+      width:750vw;
+      height:750vw;
+      @media screen and (max-height: 1000px) {
+        width:750vw;
+        height:750vw;
+      }
+      @media screen and (max-height: 900px) {
+        width:700vw;
+        height:700vw;
+      }
+      @media screen and (max-height: 800px) {
+        width:660vw;
+        height:660vw;
+      }
+      @media screen and (max-height: 600px) {
+        width:550vw;
+        height:550vw;
+      }
+    }
+
+    @include breakpoint(xxlarge) {
       width:650vw;
       height:650vw;
+      @media screen and (max-height: 1000px) {
+        width:590vw;
+        height:590vw;
+      }
+      @media screen and (max-height: 800px) {
+        width:530vw;
+        height:530vw;
+      }
+      @media screen and (max-height: 500px) {
+        width:450vw;
+        height:450vw;
+      }
     }
     .triangleSvg {
       pointer-events: fill;
@@ -108,7 +295,8 @@ body {
 
 .vpPage {
   width:100vw;
-  min-height:100vh;
+  height:100vh;
+  padding-bottom:50vh;
   position: absolute;
   margin:auto;
   overflow: scroll;
@@ -132,7 +320,34 @@ body {
     pointer-events: none;
 
   }
+  .navTr {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 70vh;
+    width: 70vh;
+    z-index: 10000000;
+    pointer-events: none;
+
+  }
 }
+
+.triangleNav {
+  //pointer-events: none;
+
+
+}
+.triFill {
+  cursor: pointer;
+  pointer-events: fill !important;
+  transition: opacity 1s ease;
+
+}
+
+
+
+
+
 
 #homePublic.bigPage {
   background-color: $bgClair;

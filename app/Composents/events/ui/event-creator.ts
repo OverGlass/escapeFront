@@ -33,12 +33,10 @@ declare var google: any;
                               #sport = "ngModel"
                              >
                              <div class="suggestions" *ngIf="filteredList.length > 0">
-                                 <ul *ngFor="let item of filteredList" >
-                              <li >
-                                 <span (click)="select(item)">{{item}}</span>
-                              </li>
-                </ul>
-            </div>
+                                <ul *ngFor="let item of filteredList" >
+                                  <li (click)="select(item)">{{item}}</li>
+                                </ul>
+                              </div>
 
                             <!-- Bouton fermeture -->
                             <span class="close" (click)="reset()"><img src="img/close.png" alt="close" class="close-icon"></span>
@@ -79,17 +77,31 @@ declare var google: any;
                              >
                              
                             <hr/>
-                            
+                            <input 
+                              type="date"
+                              id="date"
+                              name="date"
+                              [(ngModel)]="dateTime.date"
+                              placeholder="Date" 
+                              class="date"
+                              #date = "ngModel"
+                              required
+                              
+                             >
                             
                             <input 
                               type="text" 
                               name="description"
                               id="description"
+                              class="heure"
                               placeholder="Description"
                               [(ngModel)]="event.description"
                                #description = "ngModel"
                                required
                              >
+
+                                   <hr/>
+
                              
                             <input 
                               [disabled]="!eventForm.form.valid"

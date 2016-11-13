@@ -19,6 +19,44 @@ $text-clair : transparentize(#fff, 0.1);
     margin-left: 20px;
   }
 }
+.home {
+  background-color: white; //rgba(200,0,0,0.3)
+  text-align:center;
+  .logo-home{
+    height: 200px;
+  }
+  @media screen and (max-width: 640px){
+    .logo-home{
+      height: 100px;
+    }
+  }
+  .main-home {
+    .img-home{
+      margin-bottom: 10px;
+    }
+    h2{
+      color: black;
+      font-weight: bold;
+    }
+    @media screen and (min-width:640px){
+      h2{
+        padding-top: 25%;
+      }
+    }
+    h3{
+      padding: 10px 0;
+      font-weight: bold;
+    }
+    h4{
+      margin-top: 20px;
+    }
+    p{
+      text-align: justify;
+      margin-top: 10px;
+    }
+    margin-bottom: 10px;
+  }
+}
 
 .top-bar {
   position: relative;

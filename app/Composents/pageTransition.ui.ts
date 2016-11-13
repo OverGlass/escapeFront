@@ -19,9 +19,10 @@ import {Router} from "@angular/router";
      <ng-content></ng-content>
 
 
+      <ng-content select=".navTr"></ng-content>
     <!--END CONTENT-->
       <!--NAV-->
-<div class="rotate" ><span [outerHTML]="menuName"></span></div>
+<!--<div class="rotate" ><span [outerHTML]="menuName"></span></div>-->
       
    </div> <!-- Fin Viewport Page -->
    <svg id="triMenu" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
