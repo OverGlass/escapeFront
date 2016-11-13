@@ -78,13 +78,13 @@ declare var google: any;
                              
                             <hr/>
                             <input 
-                              type="date"
+                              type="number"
                               id="date"
                               name="date"
-                              [(ngModel)]="dateTime.date"
-                              placeholder="Date" 
+                              [(ngModel)]="event.nbr_personnes_max"
+                              placeholder="Nombre de personnes maximal" 
                               class="date"
-                              #date = "ngModel"
+                              #nbPersonneMax = "ngModel"
                               required
                               
                              >

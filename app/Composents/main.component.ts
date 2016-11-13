@@ -11,7 +11,7 @@ import {Router} from "@angular/router";
   template:
 `
 <page-transition class="home" [pageId]="pageId" [route]="route" [menuName]="menuName" [menuColor]="menuColor">
-  <div class="row  main">
+  <div class="row  first">
         <div class="main-home small-12 medium-10 medium-offset-1 columns">
             <div class="small-12 medium-12 columns">
                 <div class="row">

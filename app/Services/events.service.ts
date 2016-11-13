@@ -11,15 +11,30 @@ import 'rxjs/add/operator/catch';
 export class EventService {
     private userID = localStorage.getItem('id');
 
-    // private _url = "http://api.elpacha.fr/eventgeo/";
+    // private _url = "http://escape.elpacha.fr/eventgeo/";
+
+    //LOCAL
     private _url = "https://localhost/escape/web/app_dev.php/api/eventsgeo/";
     private _url2 = "https://localhost/escape/web/app_dev.php/api/events";
-    // private _url = "https://localhost/escape/web/app_dev.php/eventsgeo/";
+    private _url3 = "https://localhost/escape/web/app_dev.php/api/reserve_event";
+
+    //ONLINE
+    // private _url = "https://escape.elpacha.fr/api/web/app_dev.php/api/eventsgeo/";
+    // private _url2 = "https://escape.elpacha.fr/api/web/app_dev.php/api/events";
+    // private _url3 = "https://escape.elpacha.fr/api/web/app_dev.php/api/reserve_event";
+
     constructor(
         private _http: Http,
     ){}
 
+    joinEvent(idSquare) :Observable<Event>{
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
 
+        return this._http.post(this._url3, JSON.stringify(idSquare), {headers})
+            .map(res => res.json());
+
+    }
 
     getEvents(latitude,longitude,distance) :Observable<Event>{
 
@@ -30,7 +45,6 @@ export class EventService {
             )
             .catch(this.handleError);
     }
-
 
     postEvent(data) :Observable<Event>{
         let headers = new Headers();

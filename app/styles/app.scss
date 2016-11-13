@@ -60,10 +60,10 @@ $bgClair: #DE3D3D;
   display: none !important;
 }
 
-body {
+body,.app {
   width:100vw;
   height:100vh;
-  overflow: hidden;
+  overflow: hidden !important;
   position: relative;
 }
 .bigPage {
@@ -328,6 +328,7 @@ body {
     width: 70vh;
     z-index: 10000000;
     pointer-events: none;
+    //-webkit-backface-visibility: hidden;
 
   }
 }
@@ -369,8 +370,8 @@ body {
   background-color: $bgClair;
 }
 .first {
-  height:80vh;
-  overflow: scroll;
+  min-height:80vh;
+  //overflow: scroll;
   padding-bottom:20px;
 }
 
@@ -385,3 +386,4 @@ body {
 .top-bar-title {
   height: 100%;
 }
+

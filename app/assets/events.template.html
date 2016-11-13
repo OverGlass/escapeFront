@@ -6,7 +6,7 @@
           <h3>Sports diponibles autour de vous :</h3>
         </div>
 
-        <div class="small-12 medium-12 columns">
+        <div class="small-12 medium-6 columns">
           <span [hidden]="distance > 0" class="label warning">Veuilliez insérer un valeur positive supérieur à 0</span>
           <input
                 type="number"
@@ -17,27 +17,26 @@
           >
         </div>
 
-        <!-- Recherche -->
+        <!--&lt;!&ndash; Recherche &ndash;&gt;-->
 
-        <div class="small-12 medium-6 columns">
-          <input
-                  type="text"
-                  placeholder="Rechercher"
-                  [(ngModel)]="queryEvent"
-                  id="eventSearch"
-                  name="eventSearch"
-                  (keyup)="search()"
-                  #eventSearch = "ngModel"
-          >
-        </div>
-
+        <!--<div class="small-12 medium-6 columns">-->
+          <!--<input-->
+                  <!--type="text"-->
+                  <!--placeholder="Rechercher"-->
+                  <!--[(ngModel)]="queryEvent"-->
+                  <!--id="eventSearch"-->
+                  <!--name="eventSearch"-->
+                  <!--(keyup)="search()"-->
+                  <!--#eventSearch = "ngModel"-->
+          <!--&gt;-->
+        <!--</div>-->
         <!-- Ajout event -->
         <event-creator></event-creator>
 
         <!-- Events -->
 
         <event-tab
-                [event]="event"
+                [event]="event" (data)="joinEvent($event)" (data2)="unfollowEvent($event)" [resa]="resa2" [alreadyRes]="alreadyRes2" (eventID)="clickEvent($event)"
                 *ngFor="let event of eventContent"
         >
           <!--<event-map [lat]="event.villeLatitude" [lng]="event.villeLongitude"></event-map>-->

@@ -3,6 +3,7 @@ import {Animations, AuthService, EventService, GeolocationService} from '../../S
 import {Router} from '@angular/router';
 import {forEach} from "@angular/router/src/utils/collection";
 import {filter} from "rxjs/operator/filter";
+import {UserService} from "../../Services/user.service";
 // import {User} from "../Services/TypeChecking/user";
 // import {Observable} from 'rxjs/Rx';
 
@@ -47,15 +48,100 @@ menuName ='Accueil';
     longitude;
     distance = "10000";
 
+    eventSubscribe;
+
+    sub = [];
+
+    resa2:number = 0;
+
+
+    alreadyRes2=false;
+    private userID = localStorage.getItem('id');
+
     constructor(
         private authService : AuthService,
         private router : Router,
         private eventService : EventService,
         private geo : GeolocationService,
+        private user: UserService,
     ){
 
     }
+joinEvent(data) {
+    // console.log(this.sub);
+    // for (var i = 0; i = this.eventSubscribe.length; i++) {
+    // this.sub.push(this.eventSubscribe[i];
 
+    // }
+
+    // console.log(this.eventSubscribe[0].event);
+    for (var i = 0; i < this.sub.length; i++) {
+
+
+        if (data.event == this.sub[i]) {
+            // console.log('coucou');
+            this.resa2 = 0;
+            return;
+        } else {
+            // console.log('Pas coucou');
+            this.resa2 = 1;
+
+        }
+    }
+
+
+
+    this.eventService.joinEvent(data)
+        .subscribe(res => { console.log(res)});
+}
+
+
+    unfollowEvent(data2) {
+        // console.log(this.sub);
+        // for (var i = 0; i = this.eventSubscribe.length; i++) {
+        // this.sub.push(this.eventSubscribe[i];
+
+        // }
+
+        // console.log(this.eventSubscribe[0].event);
+        for (var i = 0; i < this.sub.length; i++) {
+
+
+            if (data2.event == this.sub[i]) {
+                // console.log('coucou');
+                this.resa2 = -1;
+                return;
+            } else {
+                // console.log('Pas coucou');
+                this.resa2 = 0;
+
+            }
+        }
+
+
+
+        this.eventService.unfollowEvent(data2)
+            .subscribe(res => { console.log(res)});
+    }
+
+
+clickEvent(id){
+    for (var i = 0; i < this.sub.length; i++) {
+
+
+        if (id == this.sub[i]) {
+            console.log('test');
+            this.alreadyRes2=true;
+            this.resa2 = 0;
+            return;
+        } else {
+            console.log('Pas test');
+            this.resa2 = 1;
+
+        }
+    }
+
+}
     routing(){
         this.router.navigate([this.route]);
     }
@@ -63,61 +149,27 @@ menuName ='Accueil';
 
     ngOnInit(){
         this.getEventNear();
-
-
+        this.getFollow();
 
     }
 
 
-    search(){
+    getFollow(){
+        this.user.getUsersEvents().subscribe(
 
-        // //Comparer QueryEvent à events.nomSport
-        //
-        // if (this.queryEvent !== ""){
-        //     this.filteredList = this.nomsSport.filter(function(el){
-        //         return el.toLowerCase().indexOf(this.queryEvent.toLowerCase()) > -1;
-        //     }.bind(this));
-        //
-        //     console.log(this.filteredList + 'coucou');
-        //     var onlyInA = this.events.filter(function(current){
-        //         return this.filteredList.filter(function(current_b){
-        //                 return  current.sport.nomSport == current_b
-        //                     && current_b.display == current.display
-        //             }).length == 0
-        //     });
-        //
-        //
-        // }else{
-        //     this.filteredList = [];
-        // }
-        //
-        // // this.events.map((el) => el.sport.nomSport).indexOf('blue');
-        //
-        //
-        // console.log(onlyInA + 'AHHHHHHHHHh');
+            // lat => {this.latitude = lat.coords.latitude},
+            res => {
+                this.eventSubscribe = res;
+                console.log(this.eventSubscribe[0].event.id);
+
+                for(var i =0; i < this.eventSubscribe.length;i++){
+                    this.sub.push(this.eventSubscribe[i].event.id);
+                }
+
+
+            });
     }
 
-
-
-
-
-
-
-    // getEventNear(){
-    //     this.geo.getLocation().subscribe(
-    //
-    //         // lat => {this.latitude = lat.coords.latitude},
-    //         lat => {
-    //             this.latitude = lat.coords.latitude;
-    //             this.longitude = lat.coords.longitude;
-    //             this.getAllEvents(this.latitude, this.longitude, this.distance);
-    //             console.log(this.nearEvent);
-    //
-    //         },
-    //         // (lnglat) => {this.coord = (lnglat)},
-    //         // (res) => {console.log((res))},
-    //     );
-    // }
 
     getEventNear(){
         this.geo.getLocation().subscribe(
@@ -140,7 +192,7 @@ menuName ='Accueil';
         this.eventService.getEvents(latitude, longitude, distance)
             .subscribe(
                 res => {
-                    this.events = res; console.log(res);
+                    this.events = res;
                     this.eventContent = this.events;
                     //trier les sports
                     for (var i =0;i < this.events.length; i++){
