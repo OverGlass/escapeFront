@@ -18,11 +18,9 @@ import {EventService} from '../../../Services';
             <hr/>
             <div class="event">
               <p>{{event.description}}.</p>
-              <div [hidden]="!res" class="go-button" (click)="unfollowEvent(event.id)">
-                <span style="cursor: pointer">Se désabonner</span>
-              </div>
-              <div [hidden]="res" class="go-button" (click)="joinEvent(event.id)">
-                <span style="cursor: pointer">S'inscrire</span>
+
+              <div class="go-button" (click)="joinEvent(event.id)">
+                <span style="cursor: pointer">{{an}}</span>
               </div>
              </div>
              
@@ -47,6 +45,8 @@ export class EventTab {
 
     lol = 0;
 
+    an = 'S\'inscrire';
+
 
     @Output() data = new EventEmitter();
     @Output() data2 = new EventEmitter();
@@ -55,7 +55,7 @@ export class EventTab {
 
 
     joinEvent(id){
-
+        this.an = 'Vous êtes inscrit !';
 
 
         var data = {
@@ -68,18 +68,14 @@ export class EventTab {
         this.lol = this.resa;
 
 
+
+
+
     }
 
     unfollowEvent(id){
 
-
-
-        var data = {
-            event:id,
-            user:this.userID
-        };
-
-        this.data2.emit(data);
+        this.data2.emit(id);
 
         this.lol = this.resa;
 
@@ -94,6 +90,11 @@ export class EventTab {
         // console.log(this.showEvent);
 
         this.res = this.alreadyRes;
+        if(this.alreadyRes){
+            this.an = 'Vous êtes inscrit !';
+        } else {
+            this.an = 'S\'inscrire';
+        }
     }
 
 }

@@ -79,11 +79,11 @@ joinEvent(data) {
 
 
         if (data.event == this.sub[i]) {
-            // console.log('coucou');
+            console.log('coucou');
             this.resa2 = 0;
             return;
         } else {
-            // console.log('Pas coucou');
+            console.log('Pas coucou');
             this.resa2 = 1;
 
         }
@@ -107,12 +107,15 @@ joinEvent(data) {
         for (var i = 0; i < this.sub.length; i++) {
 
 
-            if (data2.event == this.sub[i]) {
-                // console.log('coucou');
+            if (data2 == this.sub[i]) {
+                console.log('coucou');
+                this.alreadyRes2=false;
                 this.resa2 = -1;
+                this.eventService.unfollowEvent(data2)
+                    .subscribe(res => { console.log(res)});
                 return;
             } else {
-                // console.log('Pas coucou');
+                console.log('Pas coucou');
                 this.resa2 = 0;
 
             }
@@ -132,11 +135,9 @@ clickEvent(id){
         if (id == this.sub[i]) {
             console.log('test');
             this.alreadyRes2=true;
-            this.resa2 = 0;
             return;
         } else {
             console.log('Pas test');
-            this.resa2 = 1;
 
         }
     }

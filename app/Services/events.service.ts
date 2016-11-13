@@ -17,11 +17,13 @@ export class EventService {
     private _url = "https://localhost/escape/web/app_dev.php/api/eventsgeo/";
     private _url2 = "https://localhost/escape/web/app_dev.php/api/events";
     private _url3 = "https://localhost/escape/web/app_dev.php/api/reserve_event";
+    private _url4 = "https://localhost/escape/web/app_dev.php/api/delete_reserve_event/";
 
     //ONLINE
     // private _url = "https://escape.elpacha.fr/api/web/app_dev.php/api/eventsgeo/";
     // private _url2 = "https://escape.elpacha.fr/api/web/app_dev.php/api/events";
     // private _url3 = "https://escape.elpacha.fr/api/web/app_dev.php/api/reserve_event";
+    // private _url4 = "https://escape.elpacha.fr/api/web/app_dev.php/api/delete_reserve_event/";
 
     constructor(
         private _http: Http,
@@ -32,6 +34,15 @@ export class EventService {
         headers.append('Content-Type', 'application/json');
 
         return this._http.post(this._url3, JSON.stringify(idSquare), {headers})
+            .map(res => res.json());
+
+    }
+
+    unfollowEvent(id) :Observable<Event>{
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+
+        return this._http.delete(this._url4 + id, {headers})
             .map(res => res.json());
 
     }
