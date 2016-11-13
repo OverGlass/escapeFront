@@ -39,7 +39,7 @@ declare var google: any;
                               </div>
 
                             <!-- Bouton fermeture -->
-                            <span class="close" (click)="reset()"><img src="img/close.png" alt="close" class="close-icon"></span>
+                            <span class="close" (click)="onClick()"><img src="img/close.png" alt="close" class="close-icon"></span>
 
                             <hr/>
                             <input 
@@ -47,7 +47,7 @@ declare var google: any;
                               id="date"
                               name="date"
                               [(ngModel)]="dateTime.date"
-                              placeholder="Date" 
+                              placeholder="JJ/MM/AAAA" 
                               class="date"
                               #date = "ngModel"
                               required
@@ -58,7 +58,7 @@ declare var google: any;
                               type="time" 
                               id="heure"
                               name="heure" 
-                              placeholder="Heure" 
+                              placeholder="HH:MM" 
                               [(ngModel)]="dateTime.time"
                               class="heure"
                               required
