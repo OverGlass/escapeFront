@@ -12,22 +12,22 @@ export class UserService {
     private userID = localStorage.getItem('id');
 
     //LOCAL
-    private _url = "https://localhost/escape/web/app_dev.php/api/users/";
-    private _url2 = "https://localhost/escape/web/app_dev.php/api/users";
-    private _url3 = "https://localhost/escape/web/app_dev.php/api/follow";
-    private _url5 = "https://localhost/escape/web/app_dev.php/api/unfollow";
-    private _url4 = "https://localhost/escape/web/app_dev.php/api/user_friends/";
-    private _url6 = "https://localhost/escape/web/app_dev.php/api/reset";
-    private _url7 = "https://localhost/escape/web/app_dev.php/api/myevents/";
+    // private _url = "https://localhost/escape/web/app_dev.php/api/users/";
+    // private _url2 = "https://localhost/escape/web/app_dev.php/api/users";
+    // private _url3 = "https://localhost/escape/web/app_dev.php/api/follow";
+    // private _url5 = "https://localhost/escape/web/app_dev.php/api/unfollow";
+    // private _url4 = "https://localhost/escape/web/app_dev.php/api/user_friends/";
+    // private _url6 = "https://localhost/escape/web/app_dev.php/api/reset";
+    // private _url7 = "https://localhost/escape/web/app_dev.php/api/myevents/";
 
     //ONLINE
-    // private _url = "https://escape.elpacha.fr/api/web/app_dev.php/api/users/";
-    // private _url2 = "https://escape.elpacha.fr/api/web/app_dev.php/api/users";
-    // private _url3 = "https://escape.elpacha.fr/api/web/app_dev.php/api/follow";
-    // private _url5 = "https://escape.elpacha.fr/api/web/app_dev.php/api/unfollow";
-    // private _url4 = "https://escape.elpacha.fr/api/web/app_dev.php/api/user_friends/";
-    // private _url6 = "https://escape.elpacha.fr/api/web/app_dev.php/api/reset";
-    // private _url7 = "https://escape.elpacha.fr/api/web/app_dev.php/api/myevents/";
+    private _url = "https://escape.elpacha.fr/api/web/app_dev.php/api/users/";
+    private _url2 = "https://escape.elpacha.fr/api/web/app_dev.php/api/users";
+    private _url3 = "https://escape.elpacha.fr/api/web/app_dev.php/api/follow";
+    private _url5 = "https://escape.elpacha.fr/api/web/app_dev.php/api/unfollow";
+    private _url4 = "https://escape.elpacha.fr/api/web/app_dev.php/api/user_friends/";
+    private _url6 = "https://escape.elpacha.fr/api/web/app_dev.php/api/reset";
+    private _url7 = "https://escape.elpacha.fr/api/web/app_dev.php/api/myevents/";
 
     constructor(
         private _http: Http,

@@ -39,7 +39,7 @@ declare var google: any;
                               </div>
 
                             <!-- Bouton fermeture -->
-                            <span class="close" (click)="onClick()"><img src="img/close.png" alt="close" class="close-icon"></span>
+                            <span class="close"  style="cursor: pointer" (click)="onClick()"><img src="img/close.png" alt="close" class="close-icon"></span>
 
                             <hr/>
                             <input 

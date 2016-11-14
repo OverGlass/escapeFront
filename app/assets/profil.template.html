@@ -1,6 +1,21 @@
 <div class="row">
   <div class="main small-12 medium-12 first columns">
-    <div class="small-12 medium-6 medium-offset-3 columns">
+    <div class="small-12 medium-10 medium-offset-1 large-6 large-offset-3 columns">
+      <h1>Mes évenements auxquels je participe</h1>
+
+      <!-- AMIS -->
+
+      <div class="parametre">
+      <event-tab
+              [event]="event" (data2)="unfollowEvent($event)"
+              [resa]="resa2"
+              [alreadyRes]="alreadyRes2"
+              (eventID)="clickEvent($event)"
+              [candelete]="canDelete"
+              *ngFor="let event of eventContent"
+      >
+        <!--<event-map [lat]="event.villeLatitude" [lng]="event.villeLongitude"></event-map>-->
+      </event-tab>
       <h1>Paramètres Utilisateur</h1>
 
       <!-- AMIS -->
@@ -29,7 +44,7 @@
         <div class="small-12 medium-12 columns" *ngIf="myfriends.length > 0">
           <div *ngFor="let friends of myfriends" class="small-6 medium-4 columns"><div style="padding: 5px;" class="sport">{{friends.idUserFriend.username}} {{friends.idUserFriend.firstname}} <span (click)="deleteFriend(friends.idUserFriend.id)" style=" cursor: pointer; height: 35px; width: 35px; float:right;text-align: center;">x</span></div></div>
           <!-- end sur le dernier aussi -->
-          <div class="small-6 medium-4 end columns"><div class="sport"><a href=""><- Mes followers</a></div></div>
+          <div class="small-6 medium-4 end columns"><div class="sport"><a href=""><- Mes partenaires</a></div></div>
         </div>
       </div>
 

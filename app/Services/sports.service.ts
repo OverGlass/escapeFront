@@ -11,10 +11,10 @@ export class SportService {
     private userID = localStorage.getItem('id');
 
     //LOCAL
-    private _url = "https://localhost/escape/web/app_dev.php/api/sports";
+    // private _url = "https://localhost/escape/web/app_dev.php/api/sports";
 
     //ONLINE
-    // private _url = "https://escape.elpacha.fr/api/web/app_dev.php/api/sports";
+    private _url = "https://escape.elpacha.fr/api/web/app_dev.php/api/sports";
     constructor(
         private _http: Http,
     ){}

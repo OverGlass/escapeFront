@@ -1,6 +1,8 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit, NgZone} from "@angular/core";
 import {SportService, UserService} from '../../Services';
 import {Router} from "@angular/router"
+import {EventService} from "../../Services/events.service";
+import {} from 'rxjs';
 @Component({
     selector:'profil',
     templateUrl:'profil.template.html',
@@ -13,11 +15,19 @@ export class ProfilComponent implements OnInit{
     constructor(
       private sportService : SportService,
       private userService : UserService,
+      private eventService : EventService,
       private router : Router,
 
     ){}
 
-    event;
+    resa2 = 0;
+    alreadyRes2 =true;
+    canDelete =true;
+    // event={};
+
+    events;
+    eventID=[];
+    eventContent=[];
     friends={
             user: this.userID - 0,
             idUserFriend:null,
@@ -52,10 +62,57 @@ export class ProfilComponent implements OnInit{
 ngOnInit(){
     this.getAllUsers();
     this.getFriendsuser();
+    this.getMyEvents();
     this.getUsers();
 
 
+
 }
+
+
+getMyEvents(){
+    this.eventService.getMyEvents(this.userID).subscribe(
+        res => {
+            this.events=res;
+            console.log(this.events);
+
+            for(var i =0; i < this.events.length; i++) {
+                this.eventContent.push(this.events[i].event);
+                this.eventContent[i].id = this.events[i].id;
+            }
+
+            console.log(this.eventContent);
+
+        }
+    );
+}
+
+    clickEvent(id){
+
+    }
+
+    unfollowEvent(data2) {
+        // console.log(this.sub);
+        // for (var i = 0; i = this.eventSubscribe.length; i++) {
+        // this.sub.push(this.eventSubscribe[i];
+
+        // }
+
+        // console.log(this.eventSubscribe[0].event);
+        this.eventContent = [];
+            this.getMyEvents();
+
+        console.log('test');
+
+        alert('Vous vous êtes bien désinscrit de l\'évenement');
+
+
+        this.eventService.unfollowEvent(data2)
+            .subscribe(res => {
+                console.log(res)
+            });
+
+    }
 
     // -------- FRIENDS ----------
 

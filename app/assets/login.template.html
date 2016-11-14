@@ -6,7 +6,7 @@
             <div class="barre"></div>
             <div class="row">
                 <div class="small-12 medium-12 columns">
-                    <span class="warning label expanded" [hidden]="!error">Email ou mot de passe invalide | Avez vous activé votre compte ?</span>
+                    <span class="warning label expanded" [hidden]="!error">Email ou mot de passe invalide | Avez-vous activé votre compte ?</span>
                 </div>
                 <form #authForm="ngForm" (submit)="login()">
 
@@ -30,7 +30,7 @@
                         <!--PASSWORD-->
                         <div class="small-12 medium-6 columns">
 
-                            <span class="warning label" [hidden]="password.valid || password.pristine">Le mot de passe est requis :P</span>
+                            <span class="warning label" [hidden]="password.valid || password.pristine">Le mot de passe est requis !</span>
                             <input
                                     id="password"
                                     name="password"

@@ -60,12 +60,22 @@ $bgClair: #DE3D3D;
   display: none !important;
 }
 
-body,.app {
+
+@include breakpoint(xsmall) {
+  .app {
+    width:100vw;
+    height:100vh;
+    overflow: hidden !important;
+    position: relative;
+  }
+}
+body {
   width:100vw;
   height:100vh;
   overflow: hidden !important;
   position: relative;
 }
+
 .bigPage {
   width: 300vw;
   height: 300vh;
@@ -300,6 +310,7 @@ body,.app {
   position: absolute;
   margin:auto;
   overflow: scroll;
+  -webkit-overflow-scrolling: touch;
   //top: 25%;
   left: 25%;
 
@@ -328,7 +339,6 @@ body,.app {
     width: 70vh;
     z-index: 10000000;
     pointer-events: none;
-    //-webkit-backface-visibility: hidden;
 
   }
 }

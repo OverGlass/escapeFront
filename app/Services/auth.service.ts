@@ -9,10 +9,10 @@ export class AuthService implements CanActivate{
     private loggedIn = false;
 
     //LOCAL
-    private _url = "https://localhost/escape/web/app_dev.php/api/login";
+    // private _url = "https://localhost/escape/web/app_dev.php/api/login";
 
     //ONLINE
-    // private _url = "https://escape.elpacha.fr/api/web/app_dev.php/api/login";
+    private _url = "https://escape.elpacha.fr/api/web/app_dev.php/api/login";
 
 
     constructor(

@@ -12,14 +12,18 @@ import {EventService} from '../../../Services';
         <div class="small-12 medium-6 columns"  [class.medium-12]="showEvent">
           <div (click)="onClick(event.id) "class="event">
             <span>{{event.sport.nomSport}}<p>{{event.dateTime.timestamp * 1000 | date}} | Par @{{event.usercreateur.username}}{{event.usercreateur.firstname}}</p></span>
-            <div class="qt-people">{{event.nbrPersonnesReserve + lol}} / {{event.nbrPersonnesMax}} <img src="img/user.png" alt="personne" class="icon-qt-people"></div>
+            <div class="qt-people">{{event.nbrPersonnesReserve + lol}} / {{event.nbrPersonnesMax}} </div>
           </div>
           <div [hidden]="!showEvent" class="event-deroule">
             <hr/>
             <div class="event">
               <p>{{event.description}}.</p>
+              
+               <div [hidden]="!candelete" class="go-button" (click)="unfollowEvent(event.id)">
+                <span style="cursor: pointer">{{an2}}</span>
+              </div>
 
-              <div class="go-button" (click)="joinEvent(event.id)">
+              <div [hidden]="candelete" class="go-button" (click)="joinEvent(event.id)">
                 <span style="cursor: pointer">{{an}}</span>
               </div>
              </div>
@@ -41,11 +45,17 @@ export class EventTab {
     @Input() alreadyRes = false;
     @Input() resa = 0;
 
+    @Input() candelete = false;
+
     res=false;
 
     lol = 0;
 
     an = 'S\'inscrire';
+    an2= 'Se désinscrire';
+
+    @Input() anTrue='Vous êtes inscrit !';
+    @Input() anfalse='S\'inscrire';
 
 
     @Output() data = new EventEmitter();

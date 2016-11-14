@@ -11,8 +11,8 @@ import {Component} from "@angular/core";
                 <div class="barre"></div>
                 <div class="row">
                     <div class="small-12 medium-10 medium-offset-1 columns">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid consequatur cum illo iusto non perspiciatis quia, repellendus reprehenderit voluptatum?</p>
-                        <p> A, ab culpa deserunt libero nobis quidem veniam voluptatibus! Nam!</p>
+                        <p>Félicitation ! Vous venez de vous inscrire à Escape. Confirmez votre compte en cliquant sur le lien envoyé par mail afin de pouvoir vous connecter sur Escape !</p>
+                        
                 </div>
             </div>
         </div>

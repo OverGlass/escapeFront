@@ -46,7 +46,7 @@ menuName ='Accueil';
     coord= [];
     latitude;
     longitude;
-    distance = "10000";
+    distance = "10";
 
     eventSubscribe;
 
@@ -93,39 +93,14 @@ joinEvent(data) {
 
     this.eventService.joinEvent(data)
         .subscribe(res => { console.log(res)});
+
+    this.getFollow();
+
+
 }
 
 
-    unfollowEvent(data2) {
-        // console.log(this.sub);
-        // for (var i = 0; i = this.eventSubscribe.length; i++) {
-        // this.sub.push(this.eventSubscribe[i];
 
-        // }
-
-        // console.log(this.eventSubscribe[0].event);
-        for (var i = 0; i < this.sub.length; i++) {
-
-
-            if (data2 == this.sub[i]) {
-                console.log('coucou');
-                this.alreadyRes2=false;
-                this.resa2 = -1;
-                this.eventService.unfollowEvent(data2)
-                    .subscribe(res => { console.log(res)});
-                return;
-            } else {
-                console.log('Pas coucou');
-                this.resa2 = 0;
-
-            }
-        }
-
-
-
-        this.eventService.unfollowEvent(data2)
-            .subscribe(res => { console.log(res)});
-    }
 
 
 clickEvent(id){

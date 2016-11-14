@@ -14,16 +14,18 @@ export class EventService {
     // private _url = "http://escape.elpacha.fr/eventgeo/";
 
     //LOCAL
-    private _url = "https://localhost/escape/web/app_dev.php/api/eventsgeo/";
-    private _url2 = "https://localhost/escape/web/app_dev.php/api/events";
-    private _url3 = "https://localhost/escape/web/app_dev.php/api/reserve_event";
-    private _url4 = "https://localhost/escape/web/app_dev.php/api/delete_reserve_event/";
+    // private _url = "https://localhost/escape/web/app_dev.php/api/eventsgeo/";
+    // private _url2 = "https://localhost/escape/web/app_dev.php/api/events";
+    // private _url3 = "https://localhost/escape/web/app_dev.php/api/reserve_event";
+    // private _url4 = "https://localhost/escape/web/app_dev.php/api/delete_reserve_event/";
+    // private _url5 = "https://localhost/escape/web/app_dev.php/api/myevents/";
 
     //ONLINE
-    // private _url = "https://escape.elpacha.fr/api/web/app_dev.php/api/eventsgeo/";
-    // private _url2 = "https://escape.elpacha.fr/api/web/app_dev.php/api/events";
-    // private _url3 = "https://escape.elpacha.fr/api/web/app_dev.php/api/reserve_event";
-    // private _url4 = "https://escape.elpacha.fr/api/web/app_dev.php/api/delete_reserve_event/";
+    private _url = "https://escape.elpacha.fr/api/web/app_dev.php/api/eventsgeo/";
+    private _url2 = "https://escape.elpacha.fr/api/web/app_dev.php/api/events";
+    private _url3 = "https://escape.elpacha.fr/api/web/app_dev.php/api/reserve_event";
+    private _url4 = "https://escape.elpacha.fr/api/web/app_dev.php/api/delete_reserve_event/";
+    private _url5 = "https://escape.elpacha.fr/api/web/app_dev.php/api/myevents/";
 
     constructor(
         private _http: Http,
@@ -45,6 +47,16 @@ export class EventService {
         return this._http.delete(this._url4 + id, {headers})
             .map(res => res.json());
 
+    }
+
+    getMyEvents(id) :Observable<Event>{
+
+        return this._http.get(this._url5 + id)
+        // .map(this.extractData)
+            .map(
+                res => res.json()
+            )
+            .catch(this.handleError);
     }
 
     getEvents(latitude,longitude,distance) :Observable<Event>{
